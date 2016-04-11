@@ -21,7 +21,7 @@ def addToInventory(item):
     inventory.append(item)
     
 
-#player status yes
+#player status 
 class player(object):
     
     def __init__(self, name, health):
@@ -95,7 +95,7 @@ Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud gr
 Office1 = Building('Office 1', 'There seems nothing to be in here to help you defeat the infected.\nHead "west" into the other room. There might be something in there.', None, None, 'Elevator2', None, None , 'Office2', None, None, None, None)
 Office2 = Building('Office 2 ', 'Huh, nothing in here as well. The infecteds are coming in closer. Keep heading "west"', None, None, None, None , None, 'Janitor', None, None, None, None)
 Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room there is another door.\n\nWEAPONS\n\nit reads.Type "inside" to get in', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
-Secret = Building('Secret Door', 'Inorder to open the door you need to figure out the code', None, None, 'Weapon', 'Janitor', None,None, None, None, None, None)
+Secret = Building('Secret Door', 'Great you made it in. Take a step north', None, None, 'Weapon', 'Janitor', None,None, None, None, None, None)
 Weapon = Building('Weapon Room', 'A variaty of weapons are displayed. The the ones that you think will be useful. Remember thought there is a limit to what you can take', None, None, None, 'Elevator', 'Secret',None, None, None, None, None)
 Bathroom = Building('Restroom', 'The smell of rottening meat is rising in here. Place the first bomb in here. ', None, None, None, None, 'Stairs','Elevator', None, None, None, None)
 
@@ -156,8 +156,13 @@ while True:
         print '''
                 Infected- A person who had been contaminated by the gas.
                 Zombie- A dead person risen from the dead.The chemicals within\nthe gas had an effect on the dead making them come back to life.
+    
              '''
-
+             
+             
+    #SEE INSIDE INVENTORY         
+    if command == "inventory":
+        print (inventory)
         
     #paper read out 
     if command in pick:
@@ -177,10 +182,10 @@ while True:
     if command == 'restore':
         new_health = a.health + b.health
         print new_health,'full health restored'
-
-        #INVENTORY FOR ITEMS/WEAPONS
         
-       
+
+    #INVENTORY FOR ITEMS/WEAPONS
+        
     if command == "add":
         addToInventory(input)
         print (inventory)
@@ -190,9 +195,9 @@ while True:
 
     # door 
     if node == Secret :
-        print "Great you made it inside!"
+        print "Figure out the passcode toget in!"
 
-        password = "3546", "5515", "1651", "4539" #passwords to open up the doors 
+        password = "3546", "5515", "1651", "4539", "4620" #passwords to open up the doors 
         wordIndex = random.randint(0,len(password)-1)
         code_rip = password[wordIndex]
         user_guesses = ''
