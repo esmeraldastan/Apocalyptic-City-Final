@@ -100,28 +100,28 @@ Weapon = Building('Weapon Room', 'A variaty of weapons are displayed. The the on
 Bathroom = Building('Restroom', 'The smell of rottening meat is rising in here. Place the first bomb in here. ', None, None, None, None, 'Stairs','Elevator', None, None, None, None)
 
 #PATH TO FIRST FLOOR
-Stairs2 = ('Stairs', '', None, None, None, None, None, None, None, None, None, None)
-Elevator3 = ('Elevator', '', None, None, None, None, None, None, None, None, None, None)
+Stairs2 = ('Stairs', 'Head down as quick and possible', None, 'Lobby', None, None, None, None, None, None, None, None)
+Elevator3 = ('Elevator', 'Head down as quick and possible', None, 'Lobby', None, None, None, None, None, None, None, None)
 
 #FIRST FLOOR
-Lobby = ('Lobby', '', None, None, None, None, None, None, None, None, None, None)
-Center = ('Center', '', None, None, None, None, None, None, None, None, None, None)
+Lobby = ('Lobby', 'You are now in the first floor', None, None, None, 'Center', None, None, None, None, None, None)
+Center = ('Center', 'Place the bomb here. Once you do head "outside"', None, None, None, None, None, None, None, None, 'Enterence', None)
 
 #OUTSIDE
 Enterence=('Enterence', 'BOOM!!!Peices of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftly. It won\'t be easy now to make it you your destination with infecteds and zombies around.', None, None, None, None, None,None, None, None, None, None)
 Coffee = ('Coffee Shop', 'You are now standing inforn of a coffee shop. If you are low on health head inside to restore it. If not confinue..\nHead "west"', None, None, None, None, None,None, None, None, None, None)
-Bank =('Bank', 'You are passing by a bank. There are items inside. Across the is the a Gift Shop. An infected is in the way Attack', None, None, None, None, None,None, None, None, None, None)
-Shop =('Gift Shop', '', None, None, None, None, None, None, None, None, None, None)
-Casino =('Casino', '', None, None, None, None, None, None, None, None, None, None)
-Bakery =('Bakery', '', None, None, None, None, None, None, None, None, None, None)
+Bank =('Bank', 'You are passing by a bank. There are items inside. Across the is the a Gift Shop. An infected is in the way Attack', None, None, 'Shop', 'Coffee', None,'Casino', None, None, None, None)
+Shop =('Gift Shop', 'You are standing infront of a gift shop. Windows broken and bodies of the dead laying everywhere.Nothing foung to be useful.\nHead "south"', None, None, None, None, 'Bank', None, None, None, None, None)
+Casino =('Casino', 'As you pass by the casion you noiced how the city had turned into ruins in matter of days.Keep heading "west" you are close', None, None, None, 'Bank', None, 'Bakery', None, None, None, None)
+Bakery =('Bakery', 'You have made it far.The once sweet smell by bread is replaces by rottning bodies.The old factory is just "west"', None, None, None, 'Casino', None, 'Factory', None, None, None, None)
 
 #DESTINATION
 
-Shop =('Gift Shop', '', None, None, None, None, None, None, None, None, None, None)
-Shop =('Gift Shop', '', None, None, None, None, None, None, None, None, None, None)
-Shop =('Gift Shop', '', None, None, None, None, None, None, None, None, None, None)
-Shop =('Gift Shop', '', None, None, None, None, None, None, None, None, None, None)
-Shop =('Gift Shop', '', None, None, None, None, None, None, None, None, None, None)
+Factory =('Factory', 'You have made it to the Factory. Hurry up inside', None, None, None, None, None, None, None, None, None, 'Desk')
+Desk =('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.', None, None, None, None, None, None, None, None, 'Factory', None)
+Production =('Production Room', 'You have entered the production room. There to the "west" of you is a door opening.', None, None, None, None, None, None, None, None, None, None)
+Pressure =('Pressure Room', 'The elevator to the lab is just infront of you. Head on you are almost there', None, 'Labitory', None, None, None, None, None, None, None, None)
+Labitory =('Labatory', 'Congradulations you have made it to the Lab!', 'Pressure', None, None, None, None, None, None, None, None, None)
 
 
 
@@ -137,7 +137,6 @@ while True:
     
     #WORD DEFINE
     define = ['creatures']
-    zombie = 'A dead person risen from the dead.The chemicals within the gass had an effect on the dead makeing them come back to life'
     restore = ['restore']
     response = ['up', 'down', 'north', 'east', 'south', 'west', 'right', 'left', 'outside', 'inside'] 
     pick = ['pick up']
