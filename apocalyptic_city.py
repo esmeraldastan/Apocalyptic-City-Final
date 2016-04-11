@@ -96,7 +96,7 @@ Office1 = Building('Office 1', 'There seems nothing to be in here to help you de
 Office2 = Building('Office 2 ', 'Huh, nothing in here as well. The infecteds are coming in closer. Keep heading "west"', None, None, None, None , None, 'Janitor', None, None, None, None)
 Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room there is another door.\n\nWEAPONS\n\nit reads.Type "inside" to get in', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
 Secret = Building('Secret Door', 'Great you made it in. Take a step north', None, None, 'Weapon', 'Janitor', None,None, None, None, None, None)
-Weapon = Building('Weapon Room', 'A variaty of weapons are displayed. The the ones that you think will be useful. Remember thought there is a limit to what you can take', None, None, None, 'Elevator', 'Secret',None, None, None, None, None)
+Weapon = Building('Weapon Room', 'A variaty of weapons are displayed. The the ones that you think will be useful. Remember thought there is a limit to what you can take\n>add', None, None, None, 'Elevator', 'Secret',None, None, None, None, None)
 Bathroom = Building('Restroom', 'The smell of rottening meat is rising in here. Place the first bomb in here. ', None, None, None, None, 'Stairs','Elevator', None, None, None, None)
 
 #PATH TO FIRST FLOOR
@@ -191,7 +191,16 @@ while True:
         print (inventory)
     print
 
-   
+    if node == Weapon:
+        print '''
+                    Weapons Available:
+            
+                    *axe
+                    *sword
+                    *cross_bow
+                    *dagger
+                    *club
+                '''
 
     # door 
     if node == Secret :
@@ -232,5 +241,7 @@ while True:
             if turns == 0:
                     print "Sorry you lose"#change
         
+
+
 
         
