@@ -241,7 +241,7 @@ while True:
             if turns == 0:
                     print "Sorry you lose"#change
         
-
+#not done yet
 
 
         
