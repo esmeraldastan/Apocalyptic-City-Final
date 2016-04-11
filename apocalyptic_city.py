@@ -94,7 +94,7 @@ Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud gr
 #SECOND FLOOR
 Office1 = Building('Office 1', 'There seems nothing to be in here to help you defeat the infected.\nHead "west" into the other room. There might be something in there.', None, None, 'Elevator2', None, None , 'Office2', None, None, None, None)
 Office2 = Building('Office 2 ', 'Huh, nothing in here as well. The infecteds are coming in closer. Keep heading "west"', None, None, None, None , None, 'Janitor', None, None, None, None)
-Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room ther is another door.\nWEAPONS\n it reads. go inside Figure out the passcode to get in.', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
+Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room there is another door.\n\nWEAPONS\n\nit reads.Type "inside" to get in', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
 Secret = Building('Secret Door', 'Inorder to open the door you need to figure out the code', None, None, 'Weapon', 'Janitor', None,None, None, None, None, None)
 Weapon = Building('Weapon Room', 'A variaty of weapons are displayed. The the ones that you think will be useful. Remember thought there is a limit to what you can take', None, None, None, 'Elevator', 'Secret',None, None, None, None, None)
 Bathroom = Building('Restroom', 'The smell of rottening meat is rising in here. Place the first bomb in here. ', None, None, None, None, 'Stairs','Elevator', None, None, None, None)
@@ -191,7 +191,7 @@ while True:
 
     # door 
     if node == Secret :
-        print "Figure out the password in order to open the door."
+        print "Great you made it inside!"
 
         password = "3546", "5515", "1651", "4539" #passwords to open up the doors 
         wordIndex = random.randint(0,len(password)-1)
