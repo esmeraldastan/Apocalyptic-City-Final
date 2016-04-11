@@ -175,8 +175,9 @@ while True:
     if command in response:
         try:
            node.move(command)
+           print 'You can\'t do that way! ' 
         except:
-           print 'You can\'t do that way! '  
+            pass
            
     #RESTORE HEALTH       
     if command == 'restore':
