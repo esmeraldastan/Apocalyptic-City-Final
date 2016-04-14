@@ -42,7 +42,41 @@ class Item(object):
     def __init__(self, name):
         self.name = name
         
+
+#WEAPONS AT USE
+#SUPERCLASS                
+class Weapons(Item):
+    
+    def __init__(self, name, damage, weight):
+        super(Weapons, self).__init__(name)
+        self.damage = damage
+        self.weight = weight
+         
+#SUB_CLASSES        
+class two_hand(Weapons):
+    def __init__(self, name, damage = 100, weight = 150):
+        super(two_hand, self).__init__(name, damage = 100, weight = 150)
         
+class two_hand2(Weapons):
+    def __init__(self, name, damage = 50, weight = 80):
+        super(two_hand2, self).__init__(name, damage = 50, weight = 80)
+        
+class two_hand3(Weapons):
+    def __init__(self, name, damage = 55, weight = 100):
+        super(two_hand3, self).__init__(name, damage = 55, weight = 100)
+        
+        
+class one_hand(Weapons):
+    def __init__(self, name, damage = 10, weight = 15):
+        super(one_hand, self).__init__(name, damage = 10, weight = 15)
+        
+    
+sword = two_hand(Weapons) 
+axe = two_hand2(Weapons)
+cross_bow = two_hand3(Weapons)
+dagger = one_hand(Weapons)
+
+                
 #CONSUMABLES   
 class Consumable(Item):
     
@@ -99,32 +133,32 @@ Office1 = Building('Office 1', 'There seems nothing to be in here to help you de
 Office2 = Building('Office 2 ', 'Huh, nothing in here as well. The infecteds are coming in closer. Keep heading "west"', None, None, None, None , None, 'Janitor', None, None, None, None)
 Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room there is another door.\n\nWEAPONS\n\nit reads.Type "inside" to get in', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
 Secret = Building('Secret Door', 'Great you made it in. Take a step north', None, None, 'Weapon', 'Janitor', None,None, None, None, None, None)
-Weapon = Building('Weapon Room', 'A variaty of weapons are displayed. The the ones that you think will be useful. Remember thought there is a limit to what you can take\n>add\n\n..to exit and head out Type "east".', None, None, None, 'Elevator3', 'Secret',None, None, None, None, None)
+Weapon = Building('Weapon Room', 'A variety of weapons are displayed. They are ones that you think will be useful. Remember thought there is a limit to what you can take\n>add\n\n..to exit and head out Type "east".', None, None, None, 'Elevator3', 'Secret',None, None, None, None, None)
 Bathroom = Building('Restroom', 'The smell of rottening meat is rising in here. Place the first bomb in here. ', None, None, None, None, 'Stairs','Elevator', None, None, None, None)
 
 #PATH TO FIRST FLOOR
-Stairs2 = ('Stairs', 'Head down as quick and possible', None, 'Lobby', None, None, None, None, None, None, None, None)
-Elevator3 = ('Elevator', 'Place the first bomb here. Type in "place".Head down as quick and possible', None, 'Lobby', None, None, None, None, None, None, None, None)
+Stairs2 = Building('Stairs', 'Head down as quick and possible', None, 'Lobby', None, None, None, None, None, None, None, None)
+Elevator3 = Building('Elevator', 'Place the first bomb here. Type in "place".Head down as quick and possible', None, 'Lobby', None, None, None, None, None, None, None, None)
 
 #FIRST FLOOR
-Lobby = ('Lobby', 'You are now in the first floor', None, None, None, 'Center', None, None, None, None, None, None)
-Center = ('Center', 'Place the bomb here. Once you do head "outside"', None, None, None, None, None, None, None, None, 'Enterence', None)
+Lobby = Building('Lobby', 'You are now in the first floor', None, None, None, 'Center', None, None, None, None, None, None)
+Center = Building('Center', 'Place the bomb here. Once you do head "outside"', None, None, None, None, None, None, None, None, 'Enterence', None)
 
 #OUTSIDE
-Enterence=('Enterence', 'BOOM!!!Peices of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftly. It won\'t be easy now to make it you your destination with infecteds and zombies around.', None, None, None, None, None,None, None, None, None, None)
-Coffee = ('Coffee Shop', 'You are now standing inforn of a coffee shop. If you are low on health head inside to restore it. If not confinue..\nHead "west"', None, None, None, None, None,None, None, None, None, None)
-Bank =('Bank', 'You are passing by a bank. There are items inside. Across the is the a Gift Shop. An infected is in the way Attack', None, None, 'Shop', 'Coffee', None,'Casino', None, None, None, None)
-Shop =('Gift Shop', 'You are standing infront of a gift shop. Windows broken and bodies of the dead laying everywhere.Nothing foung to be useful.\nHead "south"', None, None, None, None, 'Bank', None, None, None, None, None)
-Casino =('Casino', 'As you pass by the casion you noiced how the city had turned into ruins in matter of days.Keep heading "west" you are close', None, None, None, 'Bank', None, 'Bakery', None, None, None, None)
-Bakery =('Bakery', 'You have made it far.The once sweet smell by bread is replaces by rottning bodies.The old factory is just "west"', None, None, None, 'Casino', None, 'Factory', None, None, None, None)
+Enterence=Building('Enterence', 'BOOM!!!Peices of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftly. It won\'t be easy now to make it you your destination with infecteds and zombies around.', None, None, None, None, None,None, None, None, None, None)
+Coffee = Building('Coffee Shop', 'You are now standing inforn of a coffee shop. If you are low on health head inside to restore it. If not confinue..\nHead "west"', None, None, None, None, None,None, None, None, None, None)
+Bank =Building('Bank', 'You are passing by a bank. There are items inside. Across the is the a Gift Shop. An infected is in the way Attack', None, None, 'Shop', 'Coffee', None,'Casino', None, None, None, None)
+Shop =Building('Gift Shop', 'You are standing infront of a gift shop. Windows broken and bodies of the dead laying everywhere.Nothing foung to be useful.\nHead "south"', None, None, None, None, 'Bank', None, None, None, None, None)
+Casino =Building('Casino', 'As you pass by the casion you noiced how the city had turned into ruins in matter of days.Keep heading "west" you are close', None, None, None, 'Bank', None, 'Bakery', None, None, None, None)
+Bakery =Building('Bakery', 'You have made it far.The once sweet smell by bread is replaces by rottning bodies.The old factory is just "west"', None, None, None, 'Casino', None, 'Factory', None, None, None, None)
 
 #DESTINATION
 
-Factory =('Factory', 'You have made it to the Factory. Hurry up inside', None, None, None, None, None, None, None, None, None, 'Desk')
-Desk =('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.', None, None, None, None, None, None, None, None, 'Factory', None)
-Production =('Production Room', 'You have entered the production room. There to the "west" of you is a door opening.', None, None, None, None, None, None, None, None, None, None)
-Pressure =('Pressure Room', 'The elevator to the lab is just infront of you. Head on you are almost there', None, 'Labitory', None, None, None, None, None, None, None, None)
-Labitory =('Labatory', 'Congradulations you have made it to the Lab!', 'Pressure', None, None, None, None, None, None, None, None, None)
+Factory =Building('Factory', 'You have made it to the Factory. Hurry up inside', None, None, None, None, None, None, None, None, None, 'Desk')
+Desk =Building('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.', None, None, None, None, None, None, None, None, 'Factory', None)
+Production =Building('Production Room', 'You have entered the production room. There to the "west" of you is a door opening.', None, None, None, None, None, None, None, None, None, None)
+Pressure =Building('Pressure Room', 'The elevator to the lab is just infront of you. Head on you are almost there', None, 'Labitory', None, None, None, None, None, None, None, None)
+Labitory =Building('Labatory', 'Congradulations you have made it to the Lab!', 'Pressure', None, None, None, None, None, None, None, None, None)
 
 
 
@@ -209,13 +243,35 @@ while True:
                     *club
                     *4 bombs
                 '''
-    if node == Elevator3:
+    '''if node == Elevator3:
         if command == "place":
+            sec = 0
             while sec != 3:
         #print ">>>>>>", sec
                 time.sleep(0.8)
                 sec += 1
-            print "time is up"    
+            print "time is up"   ''' 
+            
+    #INFO OF WEAPONS        
+    if command == "axe.damage":
+        print axe.damage 
+    elif command == "sword.damage":
+        print sword.damage
+    elif command == "cross_bow.damage":
+        print cross_bow.damage
+    elif command == "dagger.damage":
+        print dagger.damage
+        
+    if command == "axe.weight":
+        print axe.weight
+    elif command == "sword.weight":
+        print sword.weight
+    elif command == "cross_bow.weight":
+        print cross_bow.weight
+    elif command == "dagger.weight":
+        print dagger.weight
+
+    
     
     # door 
     if node == Secret :
