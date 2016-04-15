@@ -220,6 +220,8 @@ while True:
         #except:
            # pass
            
+#-------------------------------------------------------------------------------------------------------------------------------
+           
     #RESTORE HEALTH       
     if command == 'restore':
         new_health = a.health + b.health
@@ -278,7 +280,7 @@ while True:
      # PRINT OUT HEALTH THROUGHOUT THE GAME   
     if command == "me.health":
         print new_health
-        
+#--------------------------------------------------------------------------------------------------------------        
     # door 
     if node == Secret :
         print "Figure out the passcode toget in!"
