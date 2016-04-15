@@ -20,7 +20,7 @@ node = None
 
 #INVENTORY
 def addToInventory(item):
-    item = raw_input('>what do you want to add?? ')
+    item = raw_input('> what do you want to add?? ')
     inventory.append(item)
     
 
@@ -181,14 +181,15 @@ while True:
 
     
     command = raw_input('>').strip().lower()
-
- 
-
     
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+     
     #QUITE THE PROGRAM 
     if command in ['q', 'exit', 'quit']:
         sys.exit(0)
-        
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------    
+    #DEFINATION ON WORDS    
     if command in define:
         print '''
                 Infected- A person who had been contaminated by the gas.
@@ -224,6 +225,7 @@ while True:
         new_health = a.health + b.health
         print new_health,'full health restored'
         
+#-------------------------------------------------------------------------------------------------------------------------        
 
     #INVENTORY FOR ITEMS/WEAPONS
         
@@ -271,8 +273,12 @@ while True:
     elif command == "dagger.weight":
         print dagger.weight
 
-    
-    
+ #-----------------------------------------------------------------------------------------------------------
+ 
+     # PRINT OUT HEALTH THROUGHOUT THE GAME   
+    if command == "me.health":
+        print new_health
+        
     # door 
     if node == Secret :
         print "Figure out the passcode toget in!"
@@ -302,8 +308,7 @@ while True:
             print 
             
             guess = raw_input("Guess the four Numbers:")
-            if guess in ['q','quit','exit']:
-                    sys.exit(0)
+
             user_guesses += guess 
             if guess not in code_rip:
                     turns -=1
