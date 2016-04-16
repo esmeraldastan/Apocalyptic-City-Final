@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys
 import random
-import time 
+import timeit 
+import time
 
 #INVENTORY
 inventory = []
@@ -90,6 +91,11 @@ class health_potion(Consumable):
         
 a = health_potion(Consumable)  
 b = single_player(Consumable)  
+
+def timer():
+    L = []
+    for i in range(10):
+        L.append(1)
 
 #start of the map         
 class Building:
@@ -247,6 +253,10 @@ while True:
                     *club
                     *4 bombs
                 '''
+
+    if command == "place":
+        print(timeit.timeit("timer()", setup = "from  Elevator3 import test"))
+        print "time is up"
     '''if node == Elevator3:
         if command == "place":
             sec = 0
