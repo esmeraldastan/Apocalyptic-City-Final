@@ -156,7 +156,7 @@ print
 
 #THIRD FLOOR            
 Office = Building("Office", 'Papers are shattered everywhere. The lights are\nflashing on and off. There next to you is a light blue paper.\nType "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
-Conference = Building("Conference Room", 'You are now standing in the Conference Room. A couple of bodies are laying around. Rottning with a nasty smell. There\'s a flashlight on the table. Pick it up...you might need it later on.\n To add the item type \n>add\nor\n>no\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
+Conference = Building("Conference Room", 'You are now standing in the Conference Room. A couple of bodies are laying around. Rottning with a nasty smell. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add the item type\n\n>add\nor\n>no\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
 Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \nType "restore".\nThis will get you to full health. After head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
 Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..', None, 'Stairs1', None, None, None,None, None, None, None, None)
 Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.Type \n>add\nor\n>no\nafter head "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
@@ -233,7 +233,7 @@ while True:
                 Zombie- A dead person risen from the dead.The chemicals within\nthe gas had an effect on the dead making them come back to life.
     
              '''
-             
+    if command == "instrucitons"         
              
     #SEE INSIDE INVENTORY         
     if command == "inventory":
