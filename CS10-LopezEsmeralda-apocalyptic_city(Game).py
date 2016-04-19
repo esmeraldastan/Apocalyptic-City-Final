@@ -233,7 +233,19 @@ while True:
                 Zombie- A dead person risen from the dead.The chemicals within\nthe gas had an effect on the dead making them come back to life.
     
              '''
-    if command == "instrucitons"         
+    if command == "instructions":
+        print '''
+        
+        Directions:                To add an item
+            *north                     Type "add"
+            *east
+            *south
+            *west
+            *down
+            *up
+            *inside
+            *outside
+            '''        
              
     #SEE INSIDE INVENTORY         
     if command == "inventory":
@@ -330,7 +342,7 @@ while True:
 #--------------------------------------------------------------------------------------------------------------        
     # door 
     if node == Secret :
-        print "Figure out the passcode toget in!"
+        print "Figure out the passcode to get inside!"
 
         password = "3546", "5515", "1651", "4539", "4620" #passwords to open up the doors 
         wordIndex = random.randint(0,len(password)-1)
