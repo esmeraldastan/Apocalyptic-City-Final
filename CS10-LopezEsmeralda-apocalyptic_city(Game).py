@@ -162,7 +162,7 @@ Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone.
 Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\nType\n>add\nor\n>no\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
 
 #PATH TO SECOND FLOOR
-Stairs1 = Building("Stairs", 'Pieces from the ceiling are blocking your path. Find another path to get out.\n\nHead "west"', None, None, None, None, None,'Office1', None, None, None, None)
+Stairs1 = Building("Stairs", 'Pieces from the ceiling are blocking your path. Find another path to get out.\n\nAttack the zombie infornt of you.Head "west"', None, None, None, None, None,'Office1', None, None, None, None)
 Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud growl is coming for the stairs.... an infected is charging twords you\nHead "south"', 'Elevator', None, None, None, 'Office1', None , None, None, None, None)
 
 #SECOND FLOOR
@@ -377,7 +377,37 @@ while True:
                     print "You have", +turns, 'left'
             if turns == 0:
                     print "Sorry you lose"#change
+                    
+#------------------------------------------------------------------------------------------------------------------------------
+#ZOMBIE ATTACK    
+    
+    if node == Stairs1:
+        print "attack"
         
+                
+        while me.health > 0:
+            command = raw_input('>')
+            if command == "attack":
+                me.health -= zombie.attack 
+                print "Your health is now", me.health 
+                print "You attacked your enemy for", me.attacks(zombie),"damage"
+        
+
+        
+            if zombie.health <= 0:
+                print
+                print
+                print "Great, you have defeated the zombie"
+        
+                break
+        
+            print 
+    
+            if me.health <= 0:
+        
+                print "Sorry, you died."
+                break        
+#--------------------------------------------------------------------------------------------------------------------        
 #not done yet
 
 
