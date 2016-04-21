@@ -67,7 +67,27 @@ class Zombie(object):
         
 zombie = Zombie()
 
-              
+
+             
+ #HP OF INFECTED
+class Infected(object):
+    def __init__(self, health = 5000, attack = 500):
+        self.health  = health 
+        self.attack = attack 
+        
+    #COMMAND ATTACK 
+    def attacks(self, target):
+        target.damage(self. attack)
+        if target.health <= 0:
+            return "Enemy down!"
+        else:
+            return target.health
+            
+    #DAMAGE TAKEN         
+    def damage(self, amount):
+        self.health -= amount 
+        
+infected = Infected()              
         
 #ITEMS     
 class Item(object):
@@ -381,6 +401,34 @@ while True:
             if turns == 0:
                     print "Sorry you lose"#change
                     
+                    
+                    
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+                    
+    if node == Elevator2:
+        
+        while me.health > 0:
+            command = raw_input('>')
+            if command == "attack":
+                me.health -= infected.attack 
+                print "Your health is now", me.health
+                print "You attacked your enemy for", me.attacks(infected),"damage."
+        
+        
+            if infected.health <=0:
+                print
+                print
+                print "Great you have diffeted the zombie"
+        
+                break
+        
+            print 
+    
+            if me.health <= 0:
+        
+                print "sorry you died"  
+                break                  
 #------------------------------------------------------------------------------------------------------------------------------
 #ZOMBIE ATTACK    
     
