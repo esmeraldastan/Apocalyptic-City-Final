@@ -48,7 +48,7 @@ me = player()
        
 #HP OF ZOMBIE
 class Zombie(object):
-    def __init__(self, health = 5000, attack = 15000):
+    def __init__(self, health = 5000, attack = 1500):
         self.health = health
         self.attack = attack 
         
@@ -155,9 +155,9 @@ print
 #BUILDING
 
 #THIRD FLOOR            
-Office = Building("Office", 'Papers are shattered everywhere. The lights are\nflashing on and off. There next to you is a light blue paper.\n\nType "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
-Conference = Building("Conference Room", 'You are now standing in the Conference Room. A couple of bodies are laying around. Rottning with a nasty smell. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add the item type\n\n>add\nor\n>no\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
-Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \nType "restore".\nThis will get you to full health. After head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
+Office = Building("Office", 'Papers are shattered everywhere. The lights are\nflashing on and off. There next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
+Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
+Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \nType "restore".\nThis will get you to full health.\n Type in...\n>add\nto add the serum for later use\n\nAfter head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
 Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\n If you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
 Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\nType\n>add\nor\n>no\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
 
@@ -251,6 +251,8 @@ while True:
     if command == "inventory":
         print (inventory)
         
+#------------------------------------------------------------------------------------------------------------------------------------------------------
+#BLUE PAPER        
     #paper read out 
     if command in pick:
         print
@@ -258,6 +260,7 @@ while True:
         print 
         print 'Head either "north" or "east"'
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------
     #MOVE INTO DIFFERNT ROOMS 
     if command in response:
         try:
