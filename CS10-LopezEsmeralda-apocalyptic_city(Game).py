@@ -369,7 +369,7 @@ while True:
  #-----------------------------------------------------------------------------------------------------------
  
      # PRINT OUT HEALTH THROUGHOUT THE GAME   
-    if command == "me.health":
+    if command == "health":
         print me.health
         
 #--------------------------------------------------------------------------------------------------------------        
@@ -469,7 +469,33 @@ while True:
         
                 print "Sorry, you died."
                 break        
-#--------------------------------------------------------------------------------------------------------------------        
+#-------------------------------------------------------------------------------------------------------------------- 
+
+       
+    if node == Bank:
+        print 'There is a infected infront of you attack it. Type "attack".'
+        
+        while me.health > 0:
+            command = raw_input('>')
+            if command == "attack":
+                me.health -= infected.attack 
+                print "Your health is now", me.health
+                print "You attacked your enemy for", me.attacks(infected),"damage."
+        
+        
+            if infected.health <=0:
+                print
+                print
+                print "Great you have diffeted the zombie"
+        
+                break
+        
+            print 
+    
+            if me.health <= 0:
+        
+                print "sorry you died"  
+                break                         
 #not done yet
 
 
