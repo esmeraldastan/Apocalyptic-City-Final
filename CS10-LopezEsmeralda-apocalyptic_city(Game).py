@@ -13,7 +13,10 @@ sec = 0
 #Into to the game 
 time.sleep(0.5)
 print "Welcome to Apocalyptic City\n"
-print "Your objective in this game will be to get out of\nthe building to saftey.\n"  
+print "Your objective in this game will be to get out of\nthe building to saftey.\n"
+print
+print 'For instructions at any time just type in "instructions"'
+print 
 print "----"
 
 
@@ -24,7 +27,9 @@ def addToInventory(item):
     item = raw_input('> what do you want to add?? ')
     inventory.append(item)
     
+#-----------------------------------------------------------------------------------------------------------------------------
 
+#CHARACTERS
 #player status 
 class player(object):
     
@@ -87,7 +92,9 @@ class Infected(object):
     def damage(self, amount):
         self.health -= amount 
         
-infected = Infected()              
+infected = Infected() 
+
+#-------------------------------------------------------------------------------------------------------------             
         
 #ITEMS     
 class Item(object):
@@ -148,6 +155,8 @@ def timer():
     for i in range(10):
         L.append(1)
 
+#------------------------------------------------------------------------------------------------------------------------
+
 #start of the map         
 class Building:
     
@@ -177,7 +186,7 @@ print
 #THIRD FLOOR            
 Office = Building("Office", 'Papers are shattered everywhere. The lights are\nflashing on and off. There next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
 Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
-Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \nType "restore".\nThis will get you to full health.\n Type in...\n>add\nto add the serum for later use\n\nAfter head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
+Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \nType "restore".\nThis will get you to full health.\nAfter head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
 Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\n If you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
 Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\nType\n>add\nor\n>no\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
 
@@ -228,6 +237,7 @@ while True:
     print "Room: " + node.name
     print 
     print "Description: " + node.description 
+#------------------------------------------------------------------------------------------------------------------------------------------------
     
     #WORD DEFINE
     define = ['creatures']
@@ -257,14 +267,14 @@ while True:
         print '''
         
         Directions:                To add an item
-            *north                     Type "add"
-            *east
-            *south
-            *west
-            *down
-            *up
-            *inside
-            *outside
+        *north                     Type "add"
+        *east
+        *south
+        *west
+        *down
+        *up
+        *inside
+        *outside
             '''        
              
     #SEE INSIDE INVENTORY         
@@ -407,6 +417,7 @@ while True:
 
                     
     if node == Elevator2:
+        print 'There is a infected infront of you attack it. Type "attack".'
         
         while me.health > 0:
             command = raw_input('>')
@@ -433,7 +444,7 @@ while True:
 #ZOMBIE ATTACK    
     
     if node == Stairs1:
-        print "attack"
+        print 'There is a zombie infront of you. Type "attack".'
         
                 
         while me.health > 0:
@@ -441,7 +452,7 @@ while True:
             if command == "attack":
                 me.health -= zombie.attack 
                 print "Your health is now", me.health 
-                print "You attacked your enemy for", me.attacks(zombie),"damage"
+                print "You attacked your ene==my for", me.attacks(zombie),"damage"
         
 
         
