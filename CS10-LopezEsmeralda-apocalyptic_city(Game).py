@@ -15,7 +15,7 @@ time.sleep(0.5)
 print "Welcome to Apocalyptic City!\n"
 print "Your objective in this game will be to get out of\nthe building to saftey.\n"
 print
-print 'For instructions at any time just type in "instructions"'
+print 'For instructions at any time just type in "instructions".'
 print 
 print "----"
 
@@ -208,11 +208,13 @@ Elevator3 = Building('Elevator', 'Head "down"', None, 'Lobby', None, None, None,
 
 #FIRST FLOOR
 Lobby = Building('Lobby', 'You are now in the first floor. Head "east"', None, None, None, 'Center', None, None, None, None, None, None)
-Center = Building('Center', 'Place the bomb here. Once you do head "outside"', None, None, None, None, None, None, None, None, 'Enterence', None)
+Center = Building('Center', 'There is a bomb here. Head "outside" quick!', None, None, None, None, None, None, None, None, 'Enterence', None)
 
 #OUTSIDE
-Enterence=Building('Enterence', 'BOOM!!!Peices of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftly. It won\'t be easy now to make it you your destination with infecteds and zombies around.', None, None, None, None, None,None, None, None, None, None)
-Coffee = Building('Coffee Shop', 'You are now standing inforn of a coffee shop. If you are low on health head inside to restore it. If not confinue..\nHead "west"', None, None, None, None, None,None, None, None, None, None)
+Enterence=Building('Enterence', 'BOOM!!!Peices of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
+Coffee = Building('Coffee Shop', 'You are now standing inforn of a coffee shop. If you are low on health head inside to restore it. If not confinue..\nHead "west"', None, None, None, None, None,None, None, None, None, 'Enterance2')
+Enterance2 = Building('Inside', 'You are now inside the coffee shop. There is a table to your "right" with health serum. Head towards it.', None, None, None, None, None, None,'Table', None, None, None)
+Table = Building('Table','Type in restore to recover to full health', None, None, None, None, None, None, None, None, None, None)
 Bank =Building('Bank', 'You are passing by a bank. There are items inside. Across the is the a Gift Shop. An infected is in the way Attack', None, None, 'Shop', 'Coffee', None,'Casino', None, None, None, None)
 Shop =Building('Gift Shop', 'You are standing infront of a gift shop. Windows broken and bodies of the dead laying everywhere.Nothing foung to be useful.\nHead "south"', None, None, None, None, 'Bank', None, None, None, None, None)
 Casino =Building('Casino', 'As you pass by the casion you noiced how the city had turned into ruins in matter of days.Keep heading "west" you are close', None, None, None, 'Bank', None, 'Bakery', None, None, None, None)
