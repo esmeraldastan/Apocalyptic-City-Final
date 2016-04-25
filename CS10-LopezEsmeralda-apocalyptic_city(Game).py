@@ -12,7 +12,7 @@ sec = 0
 
 #Into to the game 
 time.sleep(0.5)
-print "Welcome to Apocalyptic City\n"
+print "Welcome to Apocalyptic City!\n"
 print "Your objective in this game will be to get out of\nthe building to saftey.\n"
 print
 print 'For instructions at any time just type in "instructions"'
@@ -178,28 +178,28 @@ class Building:
         global node 
         node = globals()[getattr(self, direction)]
         
-print 'You have woken up from an unconscious hit in the head. The last thing you remember was escaping\nthe white gas that was spreading throughout the city.' 
+print 'You have woken up from an unconscious hit in the head. The last thing you remember was escaping the white gas that was spreading throughout the city.' 
 print
                    
 #BUILDING
 
 #THIRD FLOOR            
-Office = Building("Office", 'Papers are shattered everywhere. The lights are\nflashing on and off. There next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
-Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
-Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \nType "restore".\nThis will get you to full health.\nAfter head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
+Office = Building("Office", 'Papers are shattered everywhere. The lights are\nflashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
+Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view at any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
+Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \n\nType "restore".\n\nThis will get you to full health.\nAfter head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
 Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\n If you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
 Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\nType\n>add\nor\n>no\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
 
 #PATH TO SECOND FLOOR
 Stairs1 = Building("Stairs", 'Pieces from the ceiling are blocking your path. Find another path to get out.\n\nAttack the zombie infornt of you.Head "west"', None, None, None, None, None,'Office1', None, None, None, None)
-Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud growl is coming for the stairs.... an infected is charging twords you\nHead "south"', 'Elevator', None, None, None, 'Office1', None , None, None, None, None)
+Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud growl is coming for the stairs.... an infected is charging twards you.\n\nHead "south".', 'Elevator', None, None, None, 'Office1', None , None, None, None, None)
 
 #SECOND FLOOR
 Office1 = Building('Office 1', 'There seems nothing to be in here to help you defeat the infected.\nHead "west" into the other room. There might be something in there.', None, None, 'Elevator2', None, None , 'Office2', None, None, None, None)
 Office2 = Building('Office 2 ', 'Huh, nothing in here as well. The infecteds are coming in closer.\nKeep heading "west"', None, None, None, None , None, 'Janitor', None, None, None, None)
-Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room there is another door.\n\nWEAPONS\n\nit reads.Type "inside" to get in', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
+Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room there is another door.\n\nWEAPONS\n\nit reads.Type "inside" to get in.', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
 Secret = Building('Secret Door', 'Great you made it in. Take a step "north"', None, None, 'Weapon', 'Janitor', None,None, None, None, None, None)
-Weapon = Building('Weapon Room', 'A variety of weapons are displayed. They are ones that you think will be useful. Remember thought there is a limit to what you can take\n>add\n\n..to exit and head out Type "east".', None, None, None, 'Elevator3', 'Secret',None, None, None, None, None)
+Weapon = Building('Weapon Room', 'A variety of weapons are displayed. Take the ones that you think will be useful. Remember thought there is a limit of 3 weapons you can take.\nType in..\n>add\n\n..to exit and head out Type "east".', None, None, None, 'Elevator3', 'Secret',None, None, None, None, None)
 Bathroom = Building('Restroom', 'The smell of rottening meat is rising in here. Place the first bomb in here. ', None, None, None, None, 'Stairs','Elevator', None, None, None, None)
 
 #PATH TO FIRST FLOOR
@@ -276,7 +276,7 @@ while True:
         *inside
         *outside
             '''        
-             
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------             
     #SEE INSIDE INVENTORY         
     if command == "inventory":
         print (inventory)
@@ -343,13 +343,13 @@ while True:
             print "time is up"   ''' 
             
     #INFO OF WEAPONS        
-    if command == "axe.damage":
+    if command == "axe damage":
         print axe.damage 
-    elif command == "sword.damage":
+    elif command == "sword damage":
         print sword.damage
-    elif command == "cross_bow.damage":
+    elif command == "cross bow damage":
         print cross_bow.damage
-    elif command == "dagger.damage":
+    elif command == "dagger damage":
         print dagger.damage
         
     if command == "axe.weight":
@@ -417,7 +417,7 @@ while True:
 
                     
     if node == Elevator2:
-        print 'There is a infected infront of you attack it. Type "attack".'
+        print 'There is an infected infront of you...attack it. Type "attack".'
         
         while me.health > 0:
             command = raw_input('>')
@@ -430,7 +430,7 @@ while True:
             if infected.health <=0:
                 print
                 print
-                print "Great you have diffeted the zombie"
+                print "Great you have defeated the infected!!!\n"
         
                 break
         
@@ -459,7 +459,7 @@ while True:
             if zombie.health <= 0:
                 print
                 print
-                print "Great, you have defeated the zombie"
+                print "Great, you have defeated the zombie!!!\n"
         
                 break
         
@@ -468,7 +468,7 @@ while True:
             if me.health <= 0:
         
                 print "Sorry, you died."
-                break        
+                sys.exit(0)        
 #-------------------------------------------------------------------------------------------------------------------- 
 
        
@@ -494,8 +494,9 @@ while True:
     
             if me.health <= 0:
         
-                print "sorry you died"  
-                break                         
+                print "sorry you died" 
+                sys.exit(0) 
+                                        
 #not done yet
 
 
