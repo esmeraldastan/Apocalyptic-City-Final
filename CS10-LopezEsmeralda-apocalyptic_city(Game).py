@@ -214,8 +214,10 @@ Center = Building('Center', 'There is a bomb here. Head "outside" quick!', None,
 Enterence=Building('Enterence', 'BOOM!!!Peices of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
 Coffee = Building('Coffee Shop', 'You are now standing inforn of a coffee shop. If you are low on health head inside to restore it. If not confinue..\nHead "west"', None, None, None, None, None,None, None, None, None, 'Enterance2')
 Enterance2 = Building('Inside', 'You are now inside the coffee shop. There is a table to your "right" with health serum. Head towards it.', None, None, None, None, None, None,'Table', None, None, None)
-Table = Building('Table','Type in restore to recover to full health', None, None, None, None, None, None, None, None, None, None)
+Table = Building('Table','Type in restore to recover to full health. Head "outside".', None, None, None, None, None, None, None, None, 'Coffee2', None)
+Coffee2 = Building('Enterance', 'Okay you are now outside. Head "west".', None, None, None, None, None, 'Bank', None, None, None, None)
 Bank =Building('Bank', 'You are passing by a bank. There are items inside. Across the is the a Gift Shop. An infected is in the way Attack', None, None, 'Shop', 'Coffee', None,'Casino', None, None, None, None)
+Inside = Building ('Front Desk', 'Infront of you is a key. Its the key the will allow you inside the factory.Head "outside" after you pick up the key.Type "add" to pick up the key...', None, None, None, None, None, None, None, None, None , None)
 Shop =Building('Gift Shop', 'You are standing infront of a gift shop. Windows broken and bodies of the dead laying everywhere.Nothing foung to be useful.\nHead "south"', None, None, None, None, 'Bank', None, None, None, None, None)
 Casino =Building('Casino', 'As you pass by the casion you noiced how the city had turned into ruins in matter of days.Keep heading "west" you are close', None, None, None, 'Bank', None, 'Bakery', None, None, None, None)
 Bakery =Building('Bakery', 'You have made it far.The once sweet smell by bread is replaces by rottning bodies.The old factory is just "west"', None, None, None, 'Casino', None, 'Factory', None, None, None, None)
@@ -354,20 +356,20 @@ while True:
     elif command == "dagger damage":
         print dagger.damage
         
-    if command == "axe.weight":
+    if command == "axe weight":
         print axe.weight
-    elif command == "sword.weight":
+    elif command == "sword weight":
         print sword.weight
-    elif command == "cross_bow.weight":
+    elif command == "cross bow weight":
         print cross_bow.weight
-    elif command == "dagger.weight":
+    elif command == "dagger weight":
         print dagger.weight
 
-    if command == "me.attacks(zombie)":
+    '''if command == "me.attacks(zombie)":
         new = zombie.attacks(me) 
         hp = new - me.health
         print hp, "is now" 
-        print me.attacks(zombie)
+        print me.attacks(zombie)'''
  #-----------------------------------------------------------------------------------------------------------
  
      # PRINT OUT HEALTH THROUGHOUT THE GAME   
