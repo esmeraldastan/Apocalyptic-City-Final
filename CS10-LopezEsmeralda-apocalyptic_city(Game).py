@@ -2,6 +2,7 @@
 import sys
 import random
 import time
+import pickle 
 
 #INVENTORY
 inventory = []
@@ -217,6 +218,16 @@ b = player()
 
 #------------------------------------------------------------------------------------------------------------------------
 
+def save():
+    global palye, node 
+    with open ('savegame.dat', 'wb') as f:
+          pickle.dump([player, node]f, protocol= 2)
+        print "game saved"
+        
+def load():
+    global player, name
+    with open('savegame.dat','rb') as f:
+        print 
 #start of the map         
 class Building:
     
@@ -318,7 +329,8 @@ while True:
     #QUITE THE PROGRAM 
     if command in ['q', 'exit', 'quit']:
         sys.exit(0)
-
+    elif command in ["save"]
+        save()
 #---------------------------------------------------------------------------------------------------------------------------------------------------    
     #DEFINATION ON WORDS    
     if command in define:
