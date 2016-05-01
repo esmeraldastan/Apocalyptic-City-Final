@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
 import random
-import timeit 
 import time
 
 #INVENTORY
@@ -41,7 +40,7 @@ class player(object):
     def attacks(self, target):
         target.damage(self.attack)
         if target.health <= 0:
-            return "Enemy down!"
+            return "0"
         else:
             return target.health
             
@@ -62,7 +61,7 @@ class Zombie(object):
     def attacks(self, target):
         target.damage(self.attack)
         if target.health <= 0:
-            return "Enemy down!"
+            return "0"
         else:
             return target.health
             
@@ -72,11 +71,30 @@ class Zombie(object):
         
 zombie = Zombie()
 
+#second zombie
+class Zombie2(object):
+    def __init__(self, health = 6000, attack = 1500):
+        self.health = health
+        self.attack = attack 
+        
 
+    #COMMAND TO ATTACK     
+    def attacks(self, target):
+        target.damage(self.attack)
+        if target.health <= 0:
+            return "0"
+        else:
+            return target.health
+            
+    #DAMAGE TAKEN   
+    def damage(self, amount):
+        self.health -= amount
+        
+zombie2 = Zombie2()
              
  #HP OF INFECTED
 class Infected(object):
-    def __init__(self, health = 5000, attack = 500):
+    def __init__(self, health = 6000, attack = 500):
         self.health  = health 
         self.attack = attack 
         
@@ -84,7 +102,7 @@ class Infected(object):
     def attacks(self, target):
         target.damage(self. attack)
         if target.health <= 0:
-            return "Enemy down!"
+            return "0"
         else:
             return target.health
             
@@ -150,10 +168,7 @@ class health_potion(Consumable):
 a = health_potion(Consumable)  
 b = player()  
 
-def timer():
-    L = []
-    for i in range(10):
-        L.append(1)
+
 
 #------------------------------------------------------------------------------------------------------------------------
 
@@ -184,9 +199,9 @@ print
 #BUILDING
 
 #THIRD FLOOR            
-Office = Building("Office", 'Papers are shattered everywhere. The lights are\nflashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
+Office = Building("Office", 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
 Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view at any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
-Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \n\nType "restore".\n\nThis will get you to full health.\nAfter head "down"', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
+Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \n\nType "restore".\n\nThis will get you to full health.\nAfter head "down".', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
 Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\n If you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
 Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\nType\n>add\nor\n>no\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
 
@@ -211,10 +226,10 @@ Lobby = Building('Lobby', 'You are now in the first floor. Head "east"', None, N
 Center = Building('Center', 'There is a bomb here. Head "outside" quick!', None, None, None, None, None, None, None, None, 'Enterence', None)
 
 #OUTSIDE
-Enterence=Building('Enterence', 'BOOM!!!Peices of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
-Coffee = Building('Coffee Shop', 'You are now standing inforn of a coffee shop. If you are low on health head inside to restore it. If not confinue..\nHead "west"', None, None, None, None, None,None, None, None, None, 'Enterance2')
+Enterence=Building('Enterence', 'BOOM!!!Pieces of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
+Coffee = Building('Coffee Shop', 'You are now standing infront of a coffee shop. If you are low on health head "inside" to restore to full health. If not continue..\nHead "west"', None, None, None, None, None,None, None, None, None, 'Enterance2')
 Enterance2 = Building('Inside', 'You are now inside the coffee shop. There is a table to your "right" with health serum. Head towards it.', None, None, None, None, None, None,'Table', None, None, None)
-Table = Building('Table','Type in restore to recover to full health. Head "outside".', None, None, None, None, None, None, None, None, 'Coffee2', None)
+Table = Building('Table','Type in restore to recover to full health. Then head "outside".', None, None, None, None, None, None, None, None, 'Coffee2', None)
 Coffee2 = Building('Enterance', 'Okay you are now outside. Head "west".', None, None, None, None, None, 'Bank', None, None, None, None)
 Bank =Building('Bank', 'You are passing by a bank. There are items inside. Across the is the a Gift Shop. An infected is in the way Attack', None, None, 'Shop', 'Coffee', None,'Casino', None, None, None, None)
 Inside = Building ('Front Desk', 'Infront of you is a key. Its the key the will allow you inside the factory.Head "outside" after you pick up the key.Type "add" to pick up the key...', None, None, None, None, None, None, None, None, None , None)
@@ -322,29 +337,20 @@ while True:
         print (inventory)
     print
 
+#-------------------------------------------------------------------------------------------------------------------------------
     if node == Weapon:
         print '''
                     Weapons Available:
             
                     *axe
                     *sword
-                    *cross_bow
+                    *cross bow
                     *dagger
                     *club
                     
                 '''
 
-    if command == "place":
-        print(timeit.timeit("timer()", setup = "from  Elevator3 import test"))
-        print "time is up"
-    '''if node == Elevator3:
-        if command == "place":
-            sec = 0
-            while sec != 3:
-        #print ">>>>>>", sec
-                time.sleep(0.8)
-                sec += 1
-            print "time is up"   ''' 
+
             
     #INFO OF WEAPONS        
     if command == "axe damage":
@@ -490,7 +496,7 @@ while True:
             if infected.health <=0:
                 print
                 print
-                print "Great you have diffeted the zombie"
+                print "Great you have defeated the infected"
         
                 break
         
