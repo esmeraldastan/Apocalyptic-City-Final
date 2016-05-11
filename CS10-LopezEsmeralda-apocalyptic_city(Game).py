@@ -216,13 +216,11 @@ b = player()
 
 
 
-#------------------------------------------------------------------------------------------------------------------------
-
-'''def save():
+#--------------------------------------------------------------------------------------------------------------------def save():
     global palye, node 
     with open ('savegame.dat', 'wb') as f:
           pickle.dump([player, node]f, protocol= 2)
-        print "game saved"'''
+        print "game saved"
         
 def load():
     global player, name
