@@ -1,4 +1,5 @@
 import Tkinter, tkFont 
+from PIL import ImageTK, Image 
 '''import sys
 import random
 import timeit 
@@ -10,6 +11,8 @@ root.title('Apocalyptic City')
 
 canvas = Tkinter.Canvas(root, height = 300, width = 1000, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
+
+
 
 #checkbox = canvas.create_rectangle( 100, 200, 200, 300, dash = [1,4])
 #check = canvas.create_line(100, 250, 150, 300, 220, 150, fill = 'green', width = 20)
@@ -68,7 +71,7 @@ def newWindow():
     button = Tkinter.Button(root2, text= 'West', width = 10, height = 5, command = newWindow)
     button.grid(row = 4, column= 4)
 
-    button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = root.)
     button.grid(row = 5, column= 4)
 
     
