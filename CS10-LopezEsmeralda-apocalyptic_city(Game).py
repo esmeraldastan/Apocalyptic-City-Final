@@ -217,15 +217,7 @@ b = player()
 
 
 #--------------------------------------------------------------------------------------------------------------------def save():
-''' global palye, node 
-    with open ('savegame.dat', 'wb') as f:
-          pickle.dump([player, node]f, protocol= 2)
-        print "game saved"'''
-        
-'''def load():
-    global player, name
-    with open('savegame.dat','rb') as f:
-        print''' 
+ 
 #start of the map         
 class Building:
     
@@ -340,13 +332,13 @@ while True:
     if command == "instructions":
         print '''
         
-        Directions:                To add an item
-        *north                     Type "add"
-        *east
-        *south
-        *west
-        *down
-        *up
+        Directions:                To add an item      To attack type in :
+        *north                     Type "add"          attack = for basic attack
+        *east                                          hit = attack with club
+        *south                                         stab = attack with dagger
+        *west                                          shoot = attack with cross bow
+        *down                                          slaughter = attack with axe 
+        *up                                            cut off = attack with sword 
         *inside
         *outside
             '''        
