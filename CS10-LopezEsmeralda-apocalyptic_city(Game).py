@@ -332,16 +332,28 @@ while True:
     if command == "instructions":
         print '''
         
-        Directions:                To add an item      To attack type in :
-        *north                     Type "add"          attack = for basic attack
-        *east                                          hit = attack with club
-        *south                                         stab = attack with dagger
-        *west                                          shoot = attack with cross bow
-        *down                                          slaughter = attack with axe 
-        *up                                            cut off = attack with sword 
+        Directions:                To add an item      
+        *north                     Type "add"          
+        *east                                          
+        *south                                         
+        *west                                          
+        *down                                           
+        *up                                             
         *inside
         *outside
-            '''        
+            '''    
+            
+    if command == " attack instructions":
+        print '''
+        
+        attack = for basic attack
+        hit = attack with club
+        stab = attack with dagger
+        shoot = attack with cross bow
+        slaughter = attack with axe 
+        cut off = attack with sword '''
+        
+                
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------             
     #SEE INSIDE INVENTORY         
     if command == "inventory":
@@ -526,26 +538,43 @@ while True:
         print 'There is a infected infront of you attack it. Type "attack".'
         
         while me.health > 0:
-            command = raw_input('>')
-            if command == "attack":
-                me.health -= infected.attack 
-                print "Your health is now", me.health
-                print "You attacked your enemy for", me.attacks(infected),"damage."
+                command = raw_input('>')
+                if command == "stab":# use of dagger
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", dagger.stab(infected),"damage."
+                elif command == "attack":# basic attack
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", me.attacks(infected),"damage."
+                elif command == "shoot":#use of cross bow
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", cross_bow.shoot(infecte),"damage."     
+                elif command == "cut off":#use of sword
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", sword.cut_off(infected),"damage."
+                elif command == "slaughter":#use of axe
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", axe.slaughter(infected),"damage."
+
+            
+                if infected.health <= 0:
+                    print
+                    print
+                    print "Great, you have defeated the zombie"
         
+                    break
         
-            if infected.health <=0:
-                print
-                print
-                print "Great you have defeated the infected"
-        
-                break
-        
-            print 
+                print 
     
-            if me.health <= 0:
+                if me.health <= 0:
         
-                print "sorry you died" 
-                sys.exit(0) 
+                    print "Sorry, you died."
+                    break
+            
                                         
 #not done yet
 

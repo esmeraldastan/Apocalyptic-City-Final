@@ -47,7 +47,7 @@ def pressed(x):
     #editor.config(state = Tkinter.NORMAL)
     
 def newWindow():
-    global message
+    #global message
     root2 = Tkinter.Tk()
     editor2 = Tkinter.Text(master = root2, width= 45, height = 0)
     editor2.grid( row= 0 , column = 0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
