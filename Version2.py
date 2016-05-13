@@ -57,7 +57,7 @@ def newWindow():
     #BUTTONS "LOCATIONS"
     button = Tkinter.Button(root2, text= 'North', width = 10, height = 5, command = newWindow)
     button.grid(row = 1, column= 4)
-    message = canvas.create_text(380, 250, text = '"Welcome "', fill = 'red', font = ('Arial', -100))
+    
 
     button = Tkinter.Button(root2, text= 'East', width = 10, height = 5, command = newWindow)
     button.grid(row = 2, column= 4)
