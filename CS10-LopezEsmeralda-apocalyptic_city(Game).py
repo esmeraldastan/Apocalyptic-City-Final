@@ -2,7 +2,7 @@
 import sys
 import random
 import time
-import pickle 
+ 
 
 #INVENTORY
 inventory = []
@@ -110,6 +110,7 @@ class Infected(object):
     #DAMAGE TAKEN         
     def damage(self, amount):
         self.health -= amount 
+        
         
 infected = Infected() 
 
@@ -273,7 +274,7 @@ Center = Building('Center', 'There is a bomb here. Head "outside" quick!', None,
 
 #OUTSIDE
 Enterence=Building('Enterence', 'BOOM!!!Pieces of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
-Coffee = Building('Coffee Shop', 'You are now standing infront of a coffee shop. If you are low on health head "inside" to restore to full health. If not continue..\nHead "west"', None, None, None, None, None,None, None, None, None, 'Enterance2')
+Coffee = Building('Coffee Shop', 'You are now standing infront of a coffee shop. If you are low on health head "inside" to restore to full health. If not continue..\nHead "west"\n\n To check on status of health type "health".', None, None, None, None, None,None, None, None, None, 'Enterance2')
 Enterance2 = Building('Inside', 'You are now inside the coffee shop. There is a table to your "right" with health serum. Head towards it.', None, None, None, None, None, None,'Table', None, None, None)
 Table = Building('Table','Type in restore to recover to full health. Then head "outside".', None, None, None, None, None, None, None, None, 'Coffee2', None)
 Coffee2 = Building('Enterance', 'Okay you are now outside. Head "west".', None, None, None, None, None, 'Bank', None, None, None, None)
@@ -319,8 +320,7 @@ while True:
     #QUITE THE PROGRAM 
     if command in ['q', 'exit', 'quit']:
         sys.exit(0)
-    '''elif command in ["save"]
-        save()'''
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------    
     #DEFINATION ON WORDS    
     if command in define:
@@ -352,6 +352,14 @@ while True:
         shoot = attack with cross bow
         slaughter = attack with axe 
         cut off = attack with sword '''
+        
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+    if command == "zombie health":
+        print zombie.health
+        
+    if command == "infected health":
+        print infected.health
         
                 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------             
@@ -486,6 +494,18 @@ while True:
         
         while me.health > 0:
             command = raw_input('>')
+            if command == "attack":
+                me.health -= infected.attack
+                print "Your health is now", me.health
+                print "Your attacked your enemy for", me.attacks(infected),"damage"
+                
+            if infected.health <= 0:
+                print 
+                print
+                print"Great, you have defeated the zombie!!!\n"
+                
+                break
+            print
             
         
         
@@ -499,9 +519,8 @@ while True:
             print 
     
             if me.health <= 0:
-        
                 print "sorry you died"  
-                break                  
+                sys.exit(0)                  
 #------------------------------------------------------------------------------------------------------------------------------
 #ZOMBIE ATTACK    
     
@@ -533,6 +552,47 @@ while True:
                 sys.exit(0)        
 #-------------------------------------------------------------------------------------------------------------------- 
 
+    if node == Bank:
+        print 'There is a infected infront of you attack it. Type "attack".'
+        
+        while me.health > 0:
+                command = raw_input('>')
+                if command == "stab":# use of dagger
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", dagger.stab(infected),"damage."
+                elif command == "attack":# basic attack
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", me.attacks(infected),"damage."
+                elif command == "shoot":#use of cross bow
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", cross_bow.shoot(infected),"damage."     
+                elif command == "cut off":#use of sword
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", sword.cut_off(infected),"damage."
+                elif command == "slaughter":#use of axe
+                    me.health -= infected.attack 
+                    print "Your health is now", me.health 
+                    print "You attacked your enemy for", axe.slaughter(infected),"damage."
+
+            
+                if infected.health <= 0:
+                    print
+                    print
+                    print "Great, you have defeated the zombie"
+        
+                    break
+        
+                print 
+    
+                if me.health <= 0:
+        
+                    print "Sorry, you died."
+                    break
+
        
     if node == Bank:
         print 'There is a infected infront of you attack it. Type "attack".'
@@ -550,7 +610,7 @@ while True:
                 elif command == "shoot":#use of cross bow
                     me.health -= infected.attack 
                     print "Your health is now", me.health 
-                    print "You attacked your enemy for", cross_bow.shoot(infecte),"damage."     
+                    print "You attacked your enemy for", cross_bow.shoot(infected),"damage."     
                 elif command == "cut off":#use of sword
                     me.health -= infected.attack 
                     print "Your health is now", me.health 
