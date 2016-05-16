@@ -80,6 +80,8 @@ def newWindow():
 
     
 #BUTTONS "LOCATIONS"
+#navigation form 
+#all windows but combat sys.
 button = Tkinter.Button(root, text= 'North', width = 10, height = 5, command = newWindow)
 button.grid(row = 1, column= 4)
 
