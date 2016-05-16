@@ -1,23 +1,27 @@
 import Tkinter, tkFont 
-from PIL import ImageTK, Image 
-'''import sys
+
+import sys
 import random
 import timeit 
 import time
-import pickle '''
+import pickle
 
 root = Tkinter.Tk()
 root.title('Apocalyptic City')
 
-canvas = Tkinter.Canvas(root, height = 300, width = 1000, relief = Tkinter.RAISED, bg= 'black')
+canvas = Tkinter.Canvas(root, height = 200, width = 1000, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
+photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+canvas.create_image(0,0, image = photo)
+canvas2 = Tkinter.Canvas(root, height = 100, width = 1000, relief = Tkinter.RAISED, bg = 'blue')
+canvas2.grid()
 
 
 
 #checkbox = canvas.create_rectangle( 100, 200, 200, 300, dash = [1,4])
 #check = canvas.create_line(100, 250, 150, 300, 220, 150, fill = 'green', width = 20)
-message = canvas.create_text(380, 250, text = '"Welcome "', fill = 'red', font = ('Arial', -100))
-
+message = canvas.create_text(380, 100, text = 'Welcome to Apocalyptic City!', fill = 'white', font = ('Yu Gothic', -50))
+#380,250
 #######################
 #Checkbox
 #####################
@@ -71,7 +75,7 @@ def newWindow():
     button = Tkinter.Button(root2, text= 'West', width = 10, height = 5, command = newWindow)
     button.grid(row = 4, column= 4)
 
-    button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = root.)
+    button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = root2.destroy)
     button.grid(row = 5, column= 4)
 
     
