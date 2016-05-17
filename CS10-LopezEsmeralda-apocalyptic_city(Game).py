@@ -114,6 +114,25 @@ class Infected(object):
         
 infected = Infected() 
 
+class Infected2(object):
+    def __init__(self, health = 6000, attack = 500):
+        self.health  = health 
+        self.attack = attack 
+        
+    #COMMAND ATTACK 
+    def attacks(self, target):
+        target.damage(self. attack)
+        if target.health <= 0:
+            return "0"
+        else:
+            return target.health
+            
+    #DAMAGE TAKEN         
+    def damage(self, amount):
+        self.health -= amount 
+        
+        
+infected2 = Infected2() 
 #-------------------------------------------------------------------------------------------------------------             
         
 #ITEMS     
@@ -254,7 +273,7 @@ Secutary = Building("Secutary Desk",' You are standing next to your securary\'s 
 
 #PATH TO SECOND FLOOR
 Stairs1 = Building("Stairs", 'Pieces from the ceiling are blocking your path. Find another path to get out.\n\nAttack the zombie infornt of you.Head "west"', None, None, None, None, None,'Office1', None, None, None, None)
-Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud growl is coming for the stairs.... an infected is charging twards you.\n\nHead "south".', 'Elevator', None, None, None, 'Office1', None , None, None, None, None)
+Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud growl is coming for the stairs.... an infected is charging towards you.\n\nHead "south".', 'Elevator', None, None, None, 'Office1', None , None, None, None, None)
 
 #SECOND FLOOR
 Office1 = Building('Office 1', 'There seems nothing to be in here to help you defeat the infected.\nHead "west" into the other room. There might be something in there.', None, None, 'Elevator2', None, None , 'Office2', None, None, None, None)
@@ -276,7 +295,7 @@ Center = Building('Center', 'There is a bomb here. Head "outside" quick!', None,
 Enterence=Building('Enterence', 'BOOM!!!Pieces of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
 Coffee = Building('Coffee Shop', 'You are now standing infront of a coffee shop. If you are low on health head "inside" to restore to full health. If not continue..\nHead "west"\n\n To check on status of health type "health".', None, None, None, None, None,None, None, None, None, 'Enterance2')
 Enterance2 = Building('Inside', 'You are now inside the coffee shop. There is a table to your "right" with health serum. Head towards it.', None, None, None, None, None, None,'Table', None, None, None)
-Table = Building('Table','Type in restore to recover to full health. Then head "outside".', None, None, None, None, None, None, None, None, 'Coffee2', None)
+Table = Building('Table','Type in "restore" to recover to full health. Then head "outside".', None, None, None, None, None, None, None, None, 'Coffee2', None)
 Coffee2 = Building('Enterance', 'Okay you are now outside. Head "west".', None, None, None, None, None, 'Bank', None, None, None, None)
 Bank =Building('Bank', 'You are passing by a bank. Across for it is a Gift Shop. It\'s starting to get dark. Something is coming twords you. Type in "flashlight" to see what it is ', None, None, 'Shop', 'Coffee', None,'Casino', None, None, None, None)
 Inside = Building ('Front Desk', 'Infront of you is a key. Its the key the will allow you inside the factory.Head "outside" after you pick up the key.Type "add" to pick up the key...', None, None, None, None, None, None, None, None, None , None)
@@ -558,25 +577,25 @@ while True:
         while me.health > 0:
                 command = raw_input('>')
                 if command == "stab":# use of dagger
-                    me.health -= infected.attack 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
-                    print "You attacked your enemy for", dagger.stab(infected),"damage."
+                    print "You attacked your enemy for", dagger.stab(infected2),"damage."
                 elif command == "attack":# basic attack
-                    me.health -= infected.attack 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
-                    print "You attacked your enemy for", me.attacks(infected),"damage."
+                    print "You attacked your enemy for", me.attacks(infected2),"damage."
                 elif command == "shoot":#use of cross bow
-                    me.health -= infected.attack 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
-                    print "You attacked your enemy for", cross_bow.shoot(infected),"damage."     
+                    print "You attacked your enemy for", cross_bow.shoot(infected2),"damage."     
                 elif command == "cut off":#use of sword
-                    me.health -= infected.attack 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
-                    print "You attacked your enemy for", sword.cut_off(infected),"damage."
+                    print "You attacked your enemy for", sword.cut_off(infected2),"damage."
                 elif command == "slaughter":#use of axe
-                    me.health -= infected.attack 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
-                    print "You attacked your enemy for", axe.slaughter(infected),"damage."
+                    print "You attacked your enemy for", axe.slaughter(infected2),"damage."
 
             
                 if infected.health <= 0:
@@ -594,7 +613,7 @@ while True:
                     break
 
        
-    if node == Bank:
+'''    if node == Bank:
         print 'There is a infected infront of you attack it. Type "attack".'
         
         while me.health > 0:
@@ -633,7 +652,7 @@ while True:
                 if me.health <= 0:
         
                     print "Sorry, you died."
-                    break
+                    break'''
             
                                         
 #not done yet
