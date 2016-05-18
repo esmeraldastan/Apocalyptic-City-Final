@@ -25,8 +25,8 @@ root.title('Apocalyptic City')
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-#canvas.create_image(0,0, image = photo)
+photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+canvas.create_image(0,0, image = photo)
 canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'blue')
 canvas2.grid()
 
