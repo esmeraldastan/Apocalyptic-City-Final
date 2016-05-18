@@ -268,11 +268,11 @@ print
 Office = Building("Office", 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
 Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view at any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
 Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \n\nType "restore".\n\nThis will get you to full health.\nAfter head "down".', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
-Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\n If you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
-Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\nType\n>add\nor\n>no\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
+Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\nIf you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
+Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\n/nType\n>add\nor\n>no\n\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
 
 #PATH TO SECOND FLOOR
-Stairs1 = Building("Stairs", 'Pieces from the ceiling are blocking your path. Find another path to get out.\n\nAttack the zombie infornt of you.Head "west"', None, None, None, None, None,'Office1', None, None, None, None)
+Stairs1 = Building("Stairs", 'Pieces from the ceiling are blocking your path. Find another path to get out.\n\nHead "west"', None, None, None, None, None,'Office1', None, None, None, None)
 Elevator2 = Building("Second Floor", 'You are now on the second floor. A loud growl is coming for the stairs.... an infected is charging towards you.\n\nHead "south".', 'Elevator', None, None, None, 'Office1', None , None, None, None, None)
 
 #SECOND FLOOR
@@ -552,7 +552,7 @@ while True:
             if command == "attack":
                 me.health -= zombie.attack 
                 print "Your health is now", me.health 
-                print "You attacked your ene==my for", me.attacks(zombie),"damage"
+                print "You attacked your enemy for", me.attacks(zombie),"damage"
         
 
         
@@ -610,7 +610,7 @@ while True:
                 if me.health <= 0:
         
                     print "Sorry, you died."
-                    break
+                    sys.exit(0)
 
        
 '''    if node == Bank:
