@@ -25,9 +25,9 @@ root.title('Apocalyptic City')
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-canvas.create_image(0,0, image = photo)
-canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'blue')
+#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+#canvas.create_image(0,0, image = photo)
+canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
 
@@ -80,10 +80,10 @@ def newWindow():
     canvas.grid()
     #photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
     #canvas.create_image(0,0, image = photo)
-    canvas2 = Tkinter.Canvas(root2, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'blue')
+    canvas2 = Tkinter.Canvas(root2, height = 350, width = 500, relief = Tkinter.RAISED, bg = 'red')
     canvas2.grid()
     
-    message = canvas2.create_text(380, 90, text = 'Welcome to Apocalyptic City!', fill = 'white', font = ('Yu Gothic', -50))
+    message = canvas2.create_text(280, 90, text = 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', fill = 'green', font = ('Yu Gothic', -50))
     print message 
 
 

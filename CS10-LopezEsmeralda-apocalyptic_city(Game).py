@@ -574,31 +574,31 @@ while True:
     if node == Bank:
         print 'There is a infected infront of you attack it. Use your weapons.'
         
-        while me.health > 0:
+        while me.health > 0 and infected2.health > 0:
                 command = raw_input('>')
                 if command == "stab":# use of dagger
-                    me.health -= infected2.attacks 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", dagger.stab(infected2),"damage."
                 elif command == "attack":# basic attack
-                    me.health -= infected2.attacks 
+                    me.health -= infected2.attack
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", me.attacks(infected2),"damage."
                 elif command == "shoot":#use of cross bow
-                    me.health -= infected2.attacks 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", cross_bow.shoot(infected2),"damage."     
                 elif command == "cut off":#use of sword
-                    me.health -= infected2.attacks 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", sword.cut_off(infected2),"damage."
                 elif command == "slaughter":#use of axe
-                    me.health -= infected2.attacks 
+                    me.health -= infected2.attack 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", axe.slaughter(infected2),"damage."
 
             
-                if infected.health <= 0:
+                if infected2.health <= 0:
                     print
                     print
                     print "Great, you have defeated the zombie"
