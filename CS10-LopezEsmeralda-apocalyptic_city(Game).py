@@ -13,7 +13,7 @@ sec = 0
 #Into to the game 
 time.sleep(0.5)
 print "Welcome to Apocalyptic City!\n"
-print "Your objective in this game will be to get out of\nthe building to saftey.\n"
+print "Your objective in this game will be to get out of\nthe building to saftey at a certain destination.\n"
 print
 print 'For instructions at any time just type in "instructions".'
 print 
@@ -115,7 +115,7 @@ class Infected(object):
 infected = Infected() 
 
 class Infected2(object):
-    def __init__(self, health = 6000, attack = 500):
+    def __init__(self, health = 7000, attack = 1000):
         self.health  = health 
         self.attack = attack 
         
@@ -280,7 +280,7 @@ Office1 = Building('Office 1', 'There seems nothing to be in here to help you de
 Office2 = Building('Office 2 ', 'Huh, nothing in here as well. The infecteds are coming in closer.\nKeep heading "west"', None, None, None, None , None, 'Janitor', None, None, None, None)
 Janitor= Building('Janitor Room', 'Cleaning applicances are scattered everywhere. Within the room there is another door.\n\nWEAPONS\n\nit reads.Type "inside" to get in.', None, None, None, 'Office1', 'Secret',None, None, None, None, 'Secret')
 Secret = Building('Secret Door', 'Great you made it in. Take a step "north"', None, None, 'Weapon', 'Janitor', None,None, None, None, None, None)
-Weapon = Building('Weapon Room', 'A variety of weapons are displayed. Take the ones that you think will be useful. Remember thought there is a limit of 3 weapons you can take.\nType in..\n>add\n\n..to exit and head out Type "east".', None, None, None, 'Elevator3', 'Secret',None, None, None, None, None)
+Weapon = Building('Weapon Room', 'A variety of weapons are displayed. Take the ones that you think will be useful. Remember thought there is a limit of 3 weapons you can take.To see how to you your weapons type "attack instructions".\nType in..\n>add\n\n..to exit and head out Type "east".', None, None, None, 'Elevator3', 'Secret',None, None, None, None, None)
 Bathroom = Building('Restroom', 'The smell of rottening meat is rising in here. Place the first bomb in here. ', None, None, None, None, 'Stairs','Elevator', None, None, None, None)
 
 #PATH TO FIRST FLOOR
@@ -391,7 +391,7 @@ while True:
     #paper read out 
     if command in pick:
         print
-        print '*Escape to the labatory hidden under an old facotry building.It should be located a couple\nof blocks west of where you are located.*'
+        print '*Escape to the labatory hidden under an old facotry building.It should be located a couple of blocks west of where you are located.*'
         print 
         print 'Head either "north" or "east"'
 
@@ -572,28 +572,28 @@ while True:
 #-------------------------------------------------------------------------------------------------------------------- 
 
     if node == Bank:
-        print 'There is a infected infront of you attack it. Type "attack".'
+        print 'There is a infected infront of you attack it. Use your weapons.'
         
         while me.health > 0:
                 command = raw_input('>')
                 if command == "stab":# use of dagger
-                    me.health -= infected2.attack 
+                    me.health -= infected2.attacks 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", dagger.stab(infected2),"damage."
                 elif command == "attack":# basic attack
-                    me.health -= infected2.attack 
+                    me.health -= infected2.attacks 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", me.attacks(infected2),"damage."
                 elif command == "shoot":#use of cross bow
-                    me.health -= infected2.attack 
+                    me.health -= infected2.attacks 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", cross_bow.shoot(infected2),"damage."     
                 elif command == "cut off":#use of sword
-                    me.health -= infected2.attack 
+                    me.health -= infected2.attacks 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", sword.cut_off(infected2),"damage."
                 elif command == "slaughter":#use of axe
-                    me.health -= infected2.attack 
+                    me.health -= infected2.attacks 
                     print "Your health is now", me.health 
                     print "You attacked your enemy for", axe.slaughter(infected2),"damage."
 

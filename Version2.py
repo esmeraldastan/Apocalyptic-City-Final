@@ -82,6 +82,9 @@ def newWindow():
     #canvas.create_image(0,0, image = photo)
     canvas2 = Tkinter.Canvas(root2, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'blue')
     canvas2.grid()
+    
+    message = canvas2.create_text(380, 90, text = 'Welcome to Apocalyptic City!', fill = 'white', font = ('Yu Gothic', -50))
+    print message 
 
 
 
