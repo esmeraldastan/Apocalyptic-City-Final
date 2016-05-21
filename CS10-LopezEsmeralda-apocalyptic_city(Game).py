@@ -306,7 +306,7 @@ Bakery =Building('Bakery', 'You have made it far.The once sweet smell by bread i
 #DESTINATION
 
 Factory =Building('Factory', 'You have made it to the Factory. Hurry up inside', None, None, None, None, None, None, None, None, None, 'Desk')
-Desk =Building('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.', None, None, None, None, None, None, None, None, 'Factory', None)
+Desk =Building('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.', None, None, 'Production', None, None, None, None, None, 'Factory', None)
 Production =Building('Production Room', 'You have entered the production room. There to the "west" of you is a door opening.', None, None, None, None, None, None, None, None, None, None)
 Pressure =Building('Pressure Room', 'The elevator to the lab is just infront of you. Head on you are almost there', None, 'Labitory', None, None, None, None, None, None, None, None)
 Labitory =Building('Labatory', 'Congradulations you have made it to the Lab!', 'Pressure', None, None, None, None, None, None, None, None, None)
@@ -339,6 +339,11 @@ while True:
     #QUITE THE PROGRAM 
     if command in ['q', 'exit', 'quit']:
         sys.exit(0)
+        
+    if command == 'read':
+        print 'The labatory is hidden under the pressure room.'
+        print 
+        print 'Head 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------    
     #DEFINATION ON WORDS    
@@ -364,7 +369,7 @@ while True:
             
     if command == " attack instructions":
         print '''
-        
+        commands:
         attack = for basic attack
         hit = attack with club
         stab = attack with dagger
@@ -463,6 +468,10 @@ while True:
      # PRINT OUT HEALTH THROUGHOUT THE GAME   
     if command == "health":
         print me.health
+#-------------------------------------------------------------------------------------------------------------
+#use of flashlight        
+    if command == "flashlight":
+        print 'Its a group of zombies standing in your path. Keep heading "west" quickly...if not they will catch you.'
         
 #--------------------------------------------------------------------------------------------------------------        
     # door 
@@ -573,6 +582,15 @@ while True:
 
     if node == Bank:
         print 'There is a infected infront of you attack it. Use your weapons.'
+        print
+        print '''
+        commands:
+        attack = for basic attack
+        hit = attack with club
+        stab = attack with dagger
+        shoot = attack with cross bow
+        slaughter = attack with axe 
+        cut off = attack with sword'''
         
         while me.health > 0 and infected2.health > 0:
                 command = raw_input('>')
@@ -612,9 +630,8 @@ while True:
                     print "Sorry, you died."
                     sys.exit(0)
 
-       if command == "flashlight":
-           print "Its a group of zombies standing in your path"
-'''    if node == Bank:
+      
+'''    if node == Casinp:
         print 'There is a infected infront of you attack it. Type "attack".'
         
         while me.health > 0:
@@ -654,7 +671,6 @@ while True:
         
                     print "Sorry, you died."
                     break'''
-            
                                         
 #not done yet
 
