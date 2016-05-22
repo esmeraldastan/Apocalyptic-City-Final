@@ -53,7 +53,7 @@ me = player()
        
 #HP OF ZOMBIE
 class Zombie(object):
-    def __init__(self, health = 5000, attack = 1500):
+    def __init__(self, health = 5000, attack = 15000):
         self.health = health
         self.attack = attack 
         
@@ -72,9 +72,9 @@ class Zombie(object):
         
 zombie = Zombie()
 
-#second zombie
+#second zombie hp
 class Zombie2(object):
-    def __init__(self, health = 6000, attack = 1500):
+    def __init__(self, health = 6000, attack = 18000):
         self.health = health
         self.attack = attack 
         
@@ -93,7 +93,7 @@ class Zombie2(object):
         
 zombie2 = Zombie2()
              
- #HP OF INFECTED
+#HP OF INFECTED
 class Infected(object):
     def __init__(self, health = 6000, attack = 500):
         self.health  = health 
@@ -305,9 +305,9 @@ Bakery =Building('Bakery', 'You have made it far.The once sweet smell by bread i
 
 #DESTINATION
 
-Factory =Building('Factory', 'You have made it to the Factory. Hurry up inside', None, None, None, None, None, None, None, None, None, 'Desk')
-Desk =Building('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.', None, None, 'Production', None, None, None, None, None, 'Factory', None)
-Production =Building('Production Room', 'You have entered the production room. There to the "west" of you is a door opening.', None, None, None, None, None, None, None, None, None, None)
+Factory =Building('Factory', 'You have made it to the Factory. Hurry up "inside"', None, None, None, None, None, None, None, None, None, 'Desk')
+Desk =Building('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.Try "read".', None, None, 'Production', None, None, None, None, None, 'Factory', None)
+Production =Building('Production Room', 'You have entered the production room. There to the "west" of you is a door opening. Head tworads it ', None, None, None, None, None, 'Pressure', None, None, None, None)
 Pressure =Building('Pressure Room', 'The elevator to the lab is just infront of you. Head on you are almost there', None, 'Labitory', None, None, None, None, None, None, None, None)
 Labitory =Building('Labatory', 'Congradulations you have made it to the Lab!', 'Pressure', None, None, None, None, None, None, None, None, None)
 
@@ -341,9 +341,9 @@ while True:
         sys.exit(0)
         
     if command == 'read':
-        print 'The labatory is hidden under the pressure room.'
+        print '*The labatory is hidden under the pressure room.*'
         print 
-        print 'Head 
+        print 'Head north'
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------    
     #DEFINATION ON WORDS    
@@ -630,48 +630,54 @@ while True:
                     print "Sorry, you died."
                     sys.exit(0)
 
-      
-'''    if node == Casinp:
-        print 'There is a infected infront of you attack it. Type "attack".'
-        
-        while me.health > 0:
-                command = raw_input('>')
-                if command == "stab":# use of dagger
-                    me.health -= infected.attack 
-                    print "Your health is now", me.health 
-                    print "You attacked your enemy for", dagger.stab(infected),"damage."
-                elif command == "attack":# basic attack
-                    me.health -= infected.attack 
-                    print "Your health is now", me.health 
-                    print "You attacked your enemy for", me.attacks(infected),"damage."
-                elif command == "shoot":#use of cross bow
-                    me.health -= infected.attack 
-                    print "Your health is now", me.health 
-                    print "You attacked your enemy for", cross_bow.shoot(infected),"damage."     
-                elif command == "cut off":#use of sword
-                    me.health -= infected.attack 
-                    print "Your health is now", me.health 
-                    print "You attacked your enemy for", sword.cut_off(infected),"damage."
-                elif command == "slaughter":#use of axe
-                    me.health -= infected.attack 
-                    print "Your health is now", me.health 
-                    print "You attacked your enemy for", axe.slaughter(infected),"damage."
 
+    if node == Pressure:
+        print 'There is a zombie infront of you. Type "attack".'
+        
+                
+        while me.health > 0 and zombie2.health > 0:
+            command = raw_input('>')
+            if command == "attack":
+                me.health -= zombie2.attack 
+                print "Your health is now", me.health 
+                print "You attacked your enemy for", me.attacks(zombie2),"damage"
+            elif command == "attack":
+                me.health -= zombie2.attack 
+                print "Your health is now", me.health 
+                print "You attacked your enemy for", me.attacks(zombie2),"damage"
+            elif command == "attack":
+                me.health -= zombie2.attack 
+                print "Your health is now", me.health 
+                print "You attacked your enemy for", me.attacks(zombie2),"damage"
+            elif command == "attack":
+                me.health -= zombie2.attack 
+                print "Your health is now", me.health 
+                print "You attacked your enemy for", me.attacks(zombie2),"damage"
+            elif command == "attack":
+                me.health -= zombie2.attack 
+                print "Your health is now", me.health 
+                print "You attacked your enemy for", me.attacks(zombie2),"damage"
+            elif command == "attack":
+                me.health -= zombie.attack 
+                print "Your health is now", me.health 
+                print "You attacked your enemy for", me.attacks(zombie),"damage"
             
-                if infected.health <= 0:
-                    print
-                    print
-                    print "Great, you have defeated the zombie"
         
-                    break
+
         
-                print 
+            if zombie2.health <= 0:
+                print
+                print
+                print "Great, you have defeated the zombie!!!\n"
+        
+                break
+        
+            print 
     
-                if me.health <= 0:
+            if me.health <= 0:
         
-                    print "Sorry, you died."
-                    break'''
-                                        
+                print "Sorry, you died."
+                sys.exit(0)                                                
 #not done yet
 
 
