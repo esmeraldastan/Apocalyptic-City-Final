@@ -25,8 +25,8 @@ root.title('Apocalyptic City')
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-#canvas.create_image(0,0, image = photo)
+photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+canvas.create_image(0,0, image = photo)
 canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
@@ -35,7 +35,7 @@ canvas2.grid()
 #checkbox = canvas.create_rectangle( 100, 200, 200, 300, dash = [1,4])
 #check = canvas.create_line(100, 250, 150, 300, 220, 150, fill = 'green', width = 20)
 message = canvas.create_text(380, 90, text = 'Welcome to Apocalyptic City!', fill = 'white', font = ('Yu Gothic', -50))
-message2 = canvas2.create_text(480, 150, text = 'Start the game', fill = 'black', font = ('Yu Gothic', -50))
+message2 = canvas2.create_text(480, 150, text = 'Your objective in this game will be to get out of\nthe building to saftey at a certain destination.\n', fill = 'black', font = ('Yu Gothic', -50))
 #380,250
 #######################
 #Checkbox
