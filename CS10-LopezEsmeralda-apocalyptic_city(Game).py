@@ -584,6 +584,7 @@ while True:
         print 'There is a infected infront of you attack it. Use your weapons.'
         print
         print '''
+        
         commands:
         attack = for basic attack
         hit = attack with club
@@ -677,6 +678,7 @@ while True:
             if me.health <= 0:
         
                 print "Sorry, you died."
+                print "Game over!"
                 sys.exit(0)                                                
 #not done yet
 
