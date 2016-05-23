@@ -144,19 +144,19 @@ def newWindow2():
     
     #BUTTONS "LOCATIONS"
 
-    button = Tkinter.Button(root3, text= 'North', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'North', width = 10, height = 5, command = newWindow3)
     button.grid(row = 0, column= 5)
     
-    button = Tkinter.Button(root3, text= 'East', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'East', width = 10, height = 5, command = newWindow3)
     button.grid(row = 0, column= 5)
 
-    button = Tkinter.Button(root3, text= 'South', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'South', width = 10, height = 5, command = newWindow3)
     button.grid(row = 3, column= 4)
 
-    button = Tkinter.Button(root3, text= 'West', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'West', width = 10, height = 5, command = newWindow3)
     button.grid(row = 2, column= 3)
 
-    button = Tkinter.Button(root3, text= 'QUIT', width = 10, height = 5, command = root3.destroy)
+    button = Tkinter.Button(root3, text= 'QUIT', width = 10, height = 5, command = root3.destroy3)
     button.grid(row = 5, column= 4)
 
 def newWindow3():    
