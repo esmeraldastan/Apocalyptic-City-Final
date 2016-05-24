@@ -292,7 +292,7 @@ Lobby = Building('Lobby', 'You are now in the first floor. Head "east"', None, N
 Center = Building('Center', 'There is a bomb here. Head "outside" quick!', None, None, None, None, None, None, None, None, 'Enterence', None)
 
 #OUTSIDE
-Enterence=Building('Entrence', 'BOOM!!!Pieces of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
+Enterence=Building('Entrance', 'BOOM!!!Pieces of glass shattering everywhere. Bodies flying in the sky. Luckly you have made it out saftely. It won\'t be easy now to make it you your destination with infecteds and zombies around.\n\nHead "south".', None, None, None, None, 'Coffee',None, None, None, None, None)
 Coffee = Building('Coffee Shop', 'You are now standing infront of a coffee shop. If you are low on health head "inside" to restore to full health. If not continue..\nHead "west"\n\nTo check on status of health type "health".', None, None, None, None, None,None, None, None, None, 'Enterance2')
 Enterance2 = Building('Inside', 'You are now inside the coffee shop. There is a table to your "right" with health serum. Head towards it.', None, None, None, None, None, None,'Table', None, None, None)
 Table = Building('Table','Type in "restore" to recover to full health. Then head "outside".', None, None, None, None, None, None, None, None, 'Coffee2', None)
@@ -353,14 +353,15 @@ while True:
                 Zombie- A dead person risen from the dead.The chemicals within\nthe gas had an effect on the dead making them come back to life.
     
              '''
+             
     if command == "instructions":
         print '''
         
         Directions:                To add an item      
         *north                     Type "add"          
         *east                                          
-        *south                                         
-        *west                                          
+        *south                    To see your health                      
+        *west                     Type "health"                     
         *down                                           
         *up                                             
         *inside
@@ -378,10 +379,12 @@ while True:
         cut off = attack with sword '''
         
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------
-        
+    
+    #print zombie health    
     if command == "zombie health":
         print zombie.health
         
+    #PRINT INFECTED HEALTH
     if command == "infected health":
         print infected.health
         
@@ -547,8 +550,10 @@ while True:
             print 
     
             if me.health <= 0:
-                print "sorry you died"  
-                sys.exit(0)                  
+                print "Sorry you died." 
+                print "Game Over!!!" 
+                sys.exit(0)  
+                                
 #------------------------------------------------------------------------------------------------------------------------------
 #ZOMBIE ATTACK    
     
@@ -577,7 +582,9 @@ while True:
             if me.health <= 0:
         
                 print "Sorry, you died."
-                sys.exit(0)        
+                print "Game Over!!!"
+                sys.exit(0) 
+                       
 #-------------------------------------------------------------------------------------------------------------------- 
 
     if node == Bank:
@@ -585,7 +592,7 @@ while True:
         print
         print '''
         
-        commands:
+        commands(Use only for the weapons you have):
         attack = for basic attack
         hit = attack with club
         stab = attack with dagger
@@ -629,11 +636,23 @@ while True:
                 if me.health <= 0:
         
                     print "Sorry, you died."
+                    print "Game Over!!!"
                     sys.exit(0)
 
+#--------------------------------------------------------------------------------------------------------------------------------------------------
 
     if node == Pressure:
-        print 'There is a zombie infront of you. Type "attack".'
+        print 'There is a zombie infront of you. Use your weapons.'
+        print '''
+                
+        commands(Use only for the weapons you have):
+        attack = for basic attack
+        hit = attack with club
+        stab = attack with dagger
+        shoot = attack with cross bow
+        slaughter = attack with axe 
+        cut off = attack with sword'''
+        
         
                 
         while me.health > 0 and zombie2.health > 0:
@@ -680,7 +699,7 @@ while True:
                 print "Sorry, you died."
                 print "Game over!"
                 sys.exit(0)                                                
-#not done yet
+
 
 
         
