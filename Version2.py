@@ -12,6 +12,8 @@ root.title('Apocalyptic City')
 
 
 
+
+
         
 #THIRD FLOOR            
 #Office = Building("Office", 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', None, None, 'Conference', 'Secutary', None, None, None, None, None, None)
@@ -25,8 +27,8 @@ root.title('Apocalyptic City')
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-canvas.create_image(0,0, image = photo)
+#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+#canvas.create_image(0,0, image = photo)
 canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
@@ -83,7 +85,7 @@ def newWindow():
     canvas2 = Tkinter.Canvas(root2, height = 350, width = 500, relief = Tkinter.RAISED, bg = 'red')
     canvas2.grid()
     
-    message = canvas2.create_text(280, 90, text = 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', fill = 'green', font = ('Yu Gothic', -50))
+    message = canvas2.create_text(300, 100, text = 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', fill = 'green', font = ('Yu Gothic', -50))
     print message 
 
 
@@ -94,6 +96,7 @@ def newWindow():
     #message2 = canvas2.create_text(480, 150, text = 'Start the game', fill = 'black', font = ('Yu Gothic', -50))
     #380,250
     #######################
+
     
     button = Tkinter.Button(root2, text= 'North', width = 10, height = 5, command = newWindow2)
     button.grid(row = 1, column= 4)
@@ -127,23 +130,70 @@ def newWindow2():
     editor3.insert(Tkinter.End, "Room : Elevator")
     editor3.see(Tkinter.End)
     
+    canvas = Tkinter.Canvas(root3, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
+    canvas.grid()
+    #photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+    #canvas.create_image(0,0, image = photo)
+    canvas2 = Tkinter.Canvas(root3, height = 350, width = 500, relief = Tkinter.RAISED, bg = 'red')
+    canvas2.grid()
+    
+    message = canvas2.create_text(300, 100, text = 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', fill = 'green', font = ('Yu Gothic', -50))
+    print message 
+
+
+    
     #BUTTONS "LOCATIONS"
 
-    button = Tkinter.Button(root3, text= 'North', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'North', width = 10, height = 5, command = newWindow3)
     button.grid(row = 0, column= 5)
     
-    button = Tkinter.Button(root3, text= 'East', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'East', width = 10, height = 5, command = newWindow3)
     button.grid(row = 0, column= 5)
 
-    button = Tkinter.Button(root3, text= 'South', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'South', width = 10, height = 5, command = newWindow3)
     button.grid(row = 3, column= 4)
 
-    button = Tkinter.Button(root3, text= 'West', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root3, text= 'West', width = 10, height = 5, command = newWindow3)
     button.grid(row = 2, column= 3)
 
-    button = Tkinter.Button(root3, text= 'QUIT', width = 10, height = 5, command = root3.destroy)
+    button = Tkinter.Button(root3, text= 'QUIT', width = 10, height = 5, command = root3.destroy3)
     button.grid(row = 5, column= 4)
 
+def newWindow3():    
+    root4 = Tkinter.Tk()
+    editor4 = Tkinter.Text(master = root4, width = 45, height = 0)
+    editor4.grid(row = 0, colum =0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
+    editor4.insert(Tkinter.End, "Room : Elevator")
+    editor4.see(Tkinter.End)
+    
+    canvas = Tkinter.Canvas(root4, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
+    canvas.grid()
+    #photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+    #canvas.create_image(0,0, image = photo)
+    canvas2 = Tkinter.Canvas(root4, height = 350, width = 500, relief = Tkinter.RAISED, bg = 'red')
+    canvas2.grid()
+    
+    message = canvas2.create_text(300, 100, text = 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', fill = 'green', font = ('Yu Gothic', -50))
+    print message 
+
+
+    
+    #BUTTONS "LOCATIONS"
+
+    button = Tkinter.Button(root4, text= 'North', width = 10, height = 5, command = newWindow)
+    button.grid(row = 0, column= 5)
+    
+    button = Tkinter.Button(root4, text= 'East', width = 10, height = 5, command = newWindow)
+    button.grid(row = 0, column= 5)
+
+    button = Tkinter.Button(root4, text= 'South', width = 10, height = 5, command = newWindow)
+    button.grid(row = 3, column= 4)
+
+    button = Tkinter.Button(root4, text= 'West', width = 10, height = 5, command = newWindow)
+    button.grid(row = 2, column= 3)
+
+    button = Tkinter.Button(root4, text= 'QUIT', width = 10, height = 5, command = root3.destroy)
+    button.grid(row = 5, column= 4)
     
 
 root.mainloop()

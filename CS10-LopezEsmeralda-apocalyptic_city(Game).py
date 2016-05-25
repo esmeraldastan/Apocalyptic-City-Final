@@ -680,7 +680,7 @@ while True:
                 print "Sorry, you died."
                 print "Game over!"
                 sys.exit(0)                                                
-#not done yet
+
 
 
         
