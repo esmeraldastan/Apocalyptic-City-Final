@@ -308,7 +308,7 @@ Bakery =Building('Bakery', 'You have made it far.The once sweet smell by bread i
 Factory =Building('Factory', 'You have made it to the Factory. Hurry up "inside"', None, None, None, None, None, None, None, None, None, 'Desk')
 Desk =Building('Front Desk', 'Take a look at the paper on the desk. It should give you information on where to find the lab.Try "read".', None, None, 'Production', None, None, None, None, None, 'Factory', None)
 Production =Building('Production Room', 'You have entered the production room. There to the "west" of you is a door opening. Head tworads it ', None, None, None, None, None, 'Pressure', None, None, None, None)
-Pressure =Building('Pressure Room', 'The elevator to the lab is just infront of you. Head on you are almost there', None, 'Labitory', None, None, None, None, None, None, None, None)
+Pressure =Building('Pressure Room', 'The elevator will take you down.\n\nType in "down"\n\n Head on you are almost there.', None, 'Labitory', None, None, None, None, None, None, None, None)
 Labitory =Building('Labatory', 'Congradulations you have made it to the Lab!', 'Pressure', None, None, None, None, None, None, None, None, None)
 
 
@@ -681,6 +681,8 @@ while True:
                 print "Game over!"
                 sys.exit(0)                                                
 
-
+        if node == Labitory:
+            print "Congratulations you have made it!!!"
+            sys.exit(0)
 
         
