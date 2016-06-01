@@ -20,15 +20,15 @@ root.title('Apocalyptic City')
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-#canvas.create_image(0,0, image = photo)
+photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+canvas.create_image(0,0, image = photo)
 canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
 #----------------------------------------------------------------------------------INTRO---------------------------------------------------------------------------------------------------------------------------
 
 message = canvas.create_text(380, 90, text = 'Welcome to Apocalyptic City!', fill = 'white', font = ('Yu Gothic', -50))
-message2 = canvas2.create_text(470, 140, text = 'Your objective in this game will be to\nget out of the building to saftey at\na certain destination.\n', fill = 'black', font = ('Yu Gothic', -50))
+message2 = canvas2.create_text(470, 140, text = 'Your objective in this game will be to\nget out of the building to saftey to\na certain destination.\n', fill = 'black', font = ('Yu Gothic', -50))
 
 
 times_pressed =0
@@ -76,12 +76,12 @@ def newWindow():
     
     canvas = Tkinter.Canvas(root2, height = 100, width = 990, relief = Tkinter.RAISED, bg= 'black')
     canvas.grid()
-    canvas2 = Tkinter.Canvas(root2, height = 390, width = 990, relief = Tkinter.RAISED, bg = 'white')
+    canvas2 = Tkinter.Canvas(root2, height = 390, width = 990, relief = Tkinter.RAISED, bg = 'red')
     canvas2.grid()
     
-    message1 = canvas.create_text(200, 90, text = 'Room: Office', fill = 'white', font = ('Yu Gothic', -30))
+    message1 = canvas.create_text(100, 60, text = 'Room: Office', fill = 'white', font = ('Yu Gothic', -30))
     print message1  
-    message = canvas2.create_text(400, 200, text = 'Papers are shattered everywhere. The lights\nare flashing on and off. Next to you is a\nblue paper.\n\nIt reads: *Escape to the labatory hidden under\nan old facotry building.It should be located a\ncouple of blocks west of where you are located.*\n\nHead north or east', fill = 'blue', font = ('Yu Gothic', -30))
+    message = canvas2.create_text(400, 200, text = 'Papers are shattered everywhere. The lights\nare flashing on and off. Next to you is a\nblue paper.\n\nIt reads: *Escape to the labatory hidden under\nan old facotry building.It should be located a\ncouple of blocks west of where you are located.*\n\nHead north or east', fill = 'black', font = ('Yu Gothic', -30))
     print message 
     
     button = Tkinter.Button(root2, text= 'North', width = 10, height = 5, command = newWindow2)
