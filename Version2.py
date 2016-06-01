@@ -10,6 +10,15 @@ import pickle
 root = Tkinter.Tk()
 root.title('Apocalyptic City')
 
+#INVENTORY
+inventory = []
+
+#INVENTORY
+def addToInventory(item):
+    item = raw_input('> what do you want to add?? ')
+    inventory.append(item)
+    
+    
 #Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view at any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
 #Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \n\nType "restore".\n\nThis will get you to full health.\nAfter head "down".', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
 #Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\n If you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
