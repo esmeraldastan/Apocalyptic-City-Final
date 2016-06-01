@@ -102,7 +102,7 @@ def newWindow():
     button = Tkinter.Button(root2, text= 'QUIT', width = 10, height = 5, command = root2.destroy)
     button.grid(row = 5, column= 4)
     
-#---------------------------------------------------------------------------------------------------------------------------  INTRO
+#---------------------------------------------------------INTRO------------------------------------------------------------------  
 #START OF THE GAME 
 
 button = Tkinter.Button(root, text= 'START GAME', width = 10, height = 5, command = newWindow)
