@@ -19,18 +19,11 @@ def addToInventory(item):
     inventory.append(item)
     
     
-#Conference = Building("Conference Room", 'You are now standing in the Conference Room. Decomposing bodies are laying around. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view at any time your inventory just type "inventory"\n\nAfter head "east"', None, None, None, 'Elevator', 'Office',None, None, None, None, None)
-#Elevator = Building("Elevator", 'You need to restore to full health.There is a green serum laying on the ground. \n\nType "restore".\n\nThis will get you to full health.\nAfter head "down".', None, 'Elevator2', None, None, 'Secutary Desk',None, None, None, None, None)
-#Stairs = Building("Stairs", 'The walls are coverd with blood. You are not alone. Zombies and infecteds run the area now. You don\'t want to encounter with one ...it can be your end.To go down the stairs type in "down" to go on to the next floor.There is blood covering the walls….Bodies laying down with body parts missing. Be careful..\n\n If you want info on these creatures type in "creatures"', None, 'Stairs1', None, None, None,None, None, None, None, None)
-#Secutary = Building("Secutary Desk",' You are standing next to your securary\'s desk. A flash light stands on top. Pick it up you might need it later on.\nType\n>add\nor\n>no\nAfter head either "north" to the elevator or "east" to the stairs.', None, None, 'Elevator', 'Stairs', None , None, None, None, None, None)
-
-#node = Office        
-        
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-canvas.create_image(0,0, image = photo)
+#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+#canvas.create_image(0,0, image = photo)
 canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
@@ -76,7 +69,7 @@ def wrong_way():
     message = canvas.create_text(300, 100, text = ' You can\'t go that way!',fill = 'red', font = ('Yu Gothic', -50))
     print message 
     
-#---------------------------------------------------------------------------------------------------------------  
+#---------------------------------------------------OFFICE------------------------------------------------------------  
   
 def newWindow():
     #global message
@@ -93,11 +86,11 @@ def newWindow():
     message = canvas2.create_text(400, 200, text = 'Papers are shattered everywhere. The lights\nare flashing on and off. Next to you is a\nblue paper.\n\nIt reads: *Escape to the labatory hidden under\nan old facotry building.It should be located a\ncouple of blocks west of where you are located.*\n\nHead north or east', fill = 'black', font = ('Yu Gothic', -30))
     print message 
     
-    button = Tkinter.Button(root2, text= 'North', width = 10, height = 5, command = newWindow2)
+    button = Tkinter.Button(root2, text= 'North', width = 10, height = 5, command = con_room)
     button.grid(row = 1, column= 4)
     
 
-    button = Tkinter.Button(root2, text= 'East', width = 10, height = 5, command = newWindow2)
+    button = Tkinter.Button(root2, text= 'East', width = 10, height = 5, command = desk)
     button.grid(row = 1, column= 5)
 
     button = Tkinter.Button(root2, text= 'South', width = 10, height = 5, command = wrong_way)
@@ -118,20 +111,26 @@ button.grid(row = 0, column= 1)
 button = Tkinter.Button(root, text= 'QUIT', width = 10, height = 5, command = root.destroy)
 button.grid(row = 0, column= 2)
 
-#---------------------------------------------------------------------------------------------------------------------------------- ELEVATOR/NORTH
+#------------------------------------------------------------ELEVATOR/NORTH---------------------------------------------------------------------- 
 
-def newWindow2():    
+def con_room():    
     root3 = Tkinter.Tk()
     root3.title('Room: Conference Room')
+    editor3 = Tkinter.Text(master = root3, width= 45, height = 0)
+    editor3.grid( row= 0 , column = 0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
+    editor3.insert(Tkinter.END,"heyyo")
+    editor3.see(Tkinter.END)
     
-    canvas = Tkinter.Canvas(root3, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
+    canvas = Tkinter.Canvas(root3, height = 100, width = 990, relief = Tkinter.RAISED, bg= 'black')
     canvas.grid()
-
-    canvas2 = Tkinter.Canvas(root3, height = 350, width = 500, relief = Tkinter.RAISED, bg = 'red')
+    canvas2 = Tkinter.Canvas(root3, height = 390, width = 990, relief = Tkinter.RAISED, bg = 'red')
     canvas2.grid()
     
-    message = canvas2.create_text(300, 100, text = 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', fill = 'green', font = ('Yu Gothic', -50))
-    print message 
+    
+    message = canvas.create_text (200, 60, text = 'Room: Conference Room', fill = 'white', font = ('Yu Gothic', -30))
+    print message
+    message1 = canvas2.create_text(1000, 100, text = 'You are now standing in the Conference Room. Decomposing bodies are laying ageround. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view at any time your inventory just type "inventory"\n\nAfter head "east"', fill = 'black', font = ('Yu Gothic', -30))
+    print message1 
 
 
     
@@ -154,7 +153,7 @@ def newWindow2():
     
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def newWindow3():    
+def desk():    
     root4 = Tkinter.Tk()
     editor4 = Tkinter.Text(master = root4, width = 45, height = 0)
     editor4.grid(row = 0, colum =0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
