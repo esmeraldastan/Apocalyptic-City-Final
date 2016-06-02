@@ -18,12 +18,12 @@ def addToInventory(item):
     item = raw_input('> what do you want to add?? ')
     inventory.append(item)
     
-    
+
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-canvas.create_image(0,0, image = photo)
+#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+#canvas.create_image(0,0, image = photo)
 canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
@@ -118,7 +118,7 @@ def con_room():
     root3.title('Room: Conference Room')
     editor3 = Tkinter.Text(master = root3, width= 45, height = 0)
     editor3.grid( row= 0 , column = 0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
-    editor3.insert(Tkinter.END,"heyyo")
+    editor3.insert(Tkinter.END,"add?")
     editor3.see(Tkinter.END)
     
     canvas = Tkinter.Canvas(root3, height = 100, width = 990, relief = Tkinter.RAISED, bg= 'black')
@@ -131,21 +131,25 @@ def con_room():
     print message
     message1 = canvas2.create_text(1000, 100, text = 'You are now standing in the Conference Room. Decomposing bodies are laying ageround. The smell of rotting human flesh is making you sick. There\'s a flashlight on the table. Pick it up...you might need it later on.\n\nTo add an item type in...\n\n>add\nor\n>no\n\n\nTo view at any time your inventory just type "inventory"\n\nAfter head "east"', fill = 'black', font = ('Yu Gothic', -30))
     print message1 
-
-
+    
+    
+    if editor3 == "add":
+        addToInventory(input)
+        print(inventory)
+    print 
     
     #BUTTONS "LOCATIONS"
 
     button = Tkinter.Button(root3, text= 'North', width = 10, height = 5, command = newWindow3)
     button.grid(row = 0, column= 5)
     
-    button = Tkinter.Button(root3, text= 'East', width = 10, height = 5, command = newWindow3)
+    button = Tkinter.Button(root3, text= 'East', width = 10, height = 5, command = elevator)
     button.grid(row = 0, column= 5)
 
     button = Tkinter.Button(root3, text= 'South', width = 10, height = 5, command = newWindow3)
     button.grid(row = 3, column= 4)
 
-    button = Tkinter.Button(root3, text= 'West', width = 10, height = 5, command = newWindow3)
+    button = Tkinter.Button(root3, text= 'West', width = 10, height = 5, command = wrong_way)
     button.grid(row = 2, column= 3)
 
     button = Tkinter.Button(root3, text= 'QUIT', width = 10, height = 5, command = root3.destroy3)
@@ -154,17 +158,17 @@ def con_room():
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def desk():    
-    root4 = Tkinter.Tk()
-    editor4 = Tkinter.Text(master = root4, width = 45, height = 0)
-    editor4.grid(row = 0, colum =0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
-    editor4.insert(Tkinter.End, "Room : Elevator")
-    editor4.see(Tkinter.End)
+    root6 = Tkinter.Tk()
+    editor6 = Tkinter.Text(master = root6, width = 45, height = 0)
+    editor6.grid(row = 0, colum =0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
+    editor6.insert(Tkinter.End, "Room : Elevator")
+    editor6.see(Tkinter.End)
     
-    canvas = Tkinter.Canvas(root4, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
+    canvas = Tkinter.Canvas(root6, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
     canvas.grid()
     #photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
     #canvas.create_image(0,0, image = photo)
-    canvas2 = Tkinter.Canvas(root4, height = 350, width = 500, relief = Tkinter.RAISED, bg = 'red')
+    canvas2 = Tkinter.Canvas(root6, height = 350, width = 500, relief = Tkinter.RAISED, bg = 'red')
     canvas2.grid()
     
     message = canvas2.create_text(300, 100, text = 'Papers are shattered everywhere. The lights are flashing on and off. Next to you is a blue paper.\n\nType in "pick up" to read what it says.', fill = 'green', font = ('Yu Gothic', -50))
@@ -174,19 +178,19 @@ def desk():
     
     #BUTTONS "LOCATIONS"
 
-    button = Tkinter.Button(root4, text= 'North', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root6, text= 'North', width = 10, height = 5, command = newWindow)
     button.grid(row = 0, column= 5)
     
-    button = Tkinter.Button(root4, text= 'East', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root6, text= 'East', width = 10, height = 5, command = newWindow)
     button.grid(row = 0, column= 5)
 
-    button = Tkinter.Button(root4, text= 'South', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root6, text= 'South', width = 10, height = 5, command = newWindow)
     button.grid(row = 3, column= 4)
 
-    button = Tkinter.Button(root4, text= 'West', width = 10, height = 5, command = newWindow)
+    button = Tkinter.Button(root6, text= 'West', width = 10, height = 5, command = newWindow)
     button.grid(row = 2, column= 3)
 
-    button = Tkinter.Button(root4, text= 'QUIT', width = 10, height = 5, command = root4.destroy)
+    button = Tkinter.Button(root6, text= 'QUIT', width = 10, height = 5, command = root6.destroy)
     button.grid(row = 5, column= 4)
 
 def newWindow3():    
@@ -225,7 +229,7 @@ def newWindow3():
     button = Tkinter.Button(root4, text= 'QUIT', width = 10, height = 5, command = root4.destroy)
     button.grid(row = 5, column= 4)   
     
-def newWindow3():    
+def elevator():    
     root4 = Tkinter.Tk()
     editor4 = Tkinter.Text(master = root4, width = 45, height = 0)
     editor4.grid(row = 0, colum =0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
