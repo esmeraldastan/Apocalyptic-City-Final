@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import Tkinter, tkFont 
+from Tkinter import *
+
 
 import sys
 import random
@@ -10,20 +12,22 @@ import pickle
 root = Tkinter.Tk()
 root.title('Apocalyptic City')
 
+root= Tk()
+scrollbar = Scrollbar(root)
+scrollbar.pack( side = RIGHT, fill = Y)
+
 #INVENTORY
 inventory = []
 
-#INVENTORY
+'''#INVENTORY
 def addToInventory(item):
     item = raw_input('> what do you want to add?? ')
-    inventory.append(item)
+    inventory.append(item)'''
     
 
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-canvas.create_image(0,0, image = photo)
 canvas2 = Tkinter.Canvas(root, height = 300, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
@@ -33,29 +37,6 @@ message = canvas.create_text(380, 90, text = 'Welcome to Apocalyptic City!', fil
 message2 = canvas2.create_text(470, 140, text = 'Your objective in this game will be to\nget out of the building to saftey to\na certain destination.\n', fill = 'black', font = ('True Lies', -40))
 
 
-times_pressed =0
-
-def pressed(x):
-    
-    try:
-        del editor
-    except:
-        pass
-    global times_pressed
-    times_pressed += x
-    #recreates the text box
-    customFont = tkFont.Font(family = 'Serif', size = 40)
-    editor = Tkinter.Text(width = 25, height =4, font =(customFont))
-    editor.grid(row = 0, column = 0) 
-    
-    #adds the text to the box
-    editor.insert(Tkinter.END, " Number of puppies killed: ")
-    editor.insert(Tkinter.END, times_pressed)
-    editor.see(Tkinter.END)
-    
-    #disable chrging the text box
-    editor.config(state = Tkinter.DISABLE)
-    #editor.config(state = Tkinter.NORMAL)
 
 #-------------------------------------------------WRONG WAY--------------------------------------------------------------------- 
 
@@ -158,18 +139,21 @@ def con_room():
     
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def desk():    
+'''def desk():    
     root3 = Tkinter.Tk()
     root3.title('Location: Secutary Desk')
+    
     
     canvas = Tkinter.Canvas(root3, height = 100, width = 990, relief = Tkinter.RAISED, bg= 'black')
     canvas.grid()
     canvas2 = Tkinter.Canvas(root3, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
     canvas2.grid()
     
+
+    
     message = canvas.create_text(300, 60, text = 'Location: Secutrary Desk', fill = 'white', font = ('Yu Gothic', -30))
     print message
-    message2 = canvas2.create_text(100, 300, text = ' You are standing next to your securary\'s desk. A "flashlight stands on top. Pick it up you might need it later on.\n\nType\n>add\n\nAfter head either "north" to the elevator or "east" to the stairs.', fill = 'black', font = ('Toxico', -50))
+    message2 = canvas2.create_text(1000, 200, text = 'You are standing next to your securary\'s desk. A "flashlight stands on top. Pick it up you might need it later on.\n\nType\n>add\n\nAfter head either "north" to the elevator or "east" to the stairs.', fill = 'black', font = ('Toxico', -30))
     print message2 
 
 
@@ -197,6 +181,8 @@ def newWindow3():
     editor4.grid(row = 0, colum =0, sticky = (Tkinter.N, Tkinter.W, Tkinter.E))
     editor4.insert(Tkinter.End, "Room : Elevator")
     editor4.see(Tkinter.End)
+    
+
     
     canvas = Tkinter.Canvas(root4, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
     canvas.grid()
@@ -261,7 +247,7 @@ def elevator():
     button.grid(row = 2, column= 3)
 
     button = Tkinter.Button(root4, text= 'QUIT', width = 10, height = 5, command = root4.destroy)
-    button.grid(row = 5, column= 4)     
+    button.grid(row = 5, column= 4)'''     
 
 root.mainloop()
 
