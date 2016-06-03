@@ -22,15 +22,15 @@ def addToInventory(item):
 
 canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED, bg= 'black')
 canvas.grid()
-#photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
-#canvas.create_image(0,0, image = photo)
-canvas2 = Tkinter.Canvas(root, height = 350, width = 900, relief = Tkinter.RAISED, bg = 'red')
+photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+canvas.create_image(0,0, image = photo)
+canvas2 = Tkinter.Canvas(root, height = 300, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
 
 #----------------------------------------------------------------------------------INTRO---------------------------------------------------------------------------------------------------------------------------
 
-message = canvas.create_text(380, 90, text = 'Welcome to Apocalyptic City!', fill = 'white', font = ('Yu Gothic', -50))
-message2 = canvas2.create_text(470, 140, text = 'Your objective in this game will be to\nget out of the building to saftey to\na certain destination.\n', fill = 'black', font = ('Yu Gothic', -50))
+message = canvas.create_text(380, 90, text = 'Welcome to Apocalyptic City!', fill = 'white', font = ('Toxico', -40))
+message2 = canvas2.create_text(470, 140, text = 'Your objective in this game will be to\nget out of the building to saftey to\na certain destination.\n', fill = 'black', font = ('True Lies', -40))
 
 
 times_pressed =0
