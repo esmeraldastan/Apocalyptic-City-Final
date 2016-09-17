@@ -28,6 +28,8 @@ canvas = Tkinter.Canvas(root, height = 200, width = 900, relief = Tkinter.RAISED
 canvas.grid()
 canvas2 = Tkinter.Canvas(root, height = 300, width = 900, relief = Tkinter.RAISED, bg = 'red')
 canvas2.grid()
+photo = Tkinter.PhotoImage(file = "C:\Users\Esmeralda\Pictures\game pic.gif")
+canvas.create_image(0,0, image = photo)
 
 #----------------------------------------------------------------------------------INTRO---------------------------------------------------------------------------------------------------------------------------
 
